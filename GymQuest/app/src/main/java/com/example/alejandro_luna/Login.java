@@ -170,7 +170,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             return;
         }
 
-        db.collection("users")
+        /*db.collection("users")
                 .whereEqualTo("email", Email)
                 .whereEqualTo("password", Password)
                 .get()
@@ -197,7 +197,29 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                         Toast.makeText(Login.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
                     }
                     progressBar.setVisibility(View.GONE);
-                });
+                });*/
+        db.collection("users")
+                   .get()
+                   .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                       @Override
+                       public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                           if(task.isSuccessful()){
+                               for(QueryDocumentSnapshot doc : task.getResult()){
+                                   String a=doc.getString("email");
+                                   String b=doc.getString("password");
+                                   String a1=Email;
+                                   String b1=Password;
+                                   if(a.equalsIgnoreCase(a1) & b.equalsIgnoreCase(b1)) {
+                                       Intent home = new Intent(Login.this, MainActivity.class);
+                                       startActivity(home);
+                                       Toast.makeText(Login.this, "Logged In", Toast.LENGTH_SHORT).show();
+                                       break;
+                                   }
+                               }
+
+                           }
+                       }
+                   });
 
 
     }
