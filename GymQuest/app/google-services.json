@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "359261215841",
+    "project_id": "gymquest-4383c",
+    "storage_bucket": "gymquest-4383c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359261215841:android:b90edd377c464bcbb69e20",
+        "android_client_info": {
+          "package_name": "com.example.gymquest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359261215841-tfhm0b5kbaudoq5hrlrej29nqa51nqk0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbMoFYxdlpS1-G4bvzGk7abj9ljjRgr0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359261215841-tfhm0b5kbaudoq5hrlrej29nqa51nqk0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
