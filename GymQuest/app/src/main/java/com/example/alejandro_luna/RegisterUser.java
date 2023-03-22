@@ -15,9 +15,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -29,16 +33,16 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     private TextView registerUser;
     private ImageView banner;
-    private EditText name, surname, height,kg,kcal, email, password, confirmPassword;
+    private EditText name, height,kg,kcal, email, password, confirmPassword;
     private ProgressBar progressBar;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    //FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
-        //mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
 
         banner = findViewById(R.id.mainBanner);
@@ -148,6 +152,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         }
 
         progressBar.setVisibility(View.VISIBLE);
+        /*
         db.collection("users").add(user)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -165,14 +170,15 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     }
                 });
 
-
-        /*mAuth.createUserWithEmailAndPassword(Email, Password)
+            */
+        mAuth.createUserWithEmailAndPassword(Email, Password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            User user = new User(Name, Surname, Birth, Email, Password);
-                            FirebaseDatabase.getInstance().getReference("Users")
+                            // public User(String name, String height, String kg, String kcal, String email, String password)
+                            User user = new User(Name, Height, Kg, Kcal,Email, Password);
+                            FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
@@ -189,6 +195,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                     });
                         }
                     }
-                });*/
+                });
     }
 }

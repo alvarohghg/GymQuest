@@ -21,6 +21,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -65,9 +67,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             @Override
             public void onClick(View v) {
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto","support@smarfit.com", null));
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "SmartFit Support");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, "SmartFit Support");
+                        "mailto","support@gymquest.com", null));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "GymQuest Support");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "GymQuest Support");
                 startActivity(Intent.createChooser(emailIntent, "Send email..."));
             }
         });
@@ -75,7 +77,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         progressBar=(ProgressBar) findViewById(R.id.progressBar);
         //Firebase Auth instance
-        //mAuth=FirebaseAuth.getInstance();
+        mAuth=FirebaseAuth.getInstance();
 
         forgotPassword=(TextView) findViewById(R.id.forgot);
         forgotPassword.setOnClickListener(this);
@@ -169,35 +171,28 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             password.requestFocus();
             return;
         }
+        mAuth.signInWithEmailAndPassword(Email, Password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
 
-        /*db.collection("users")
-                .whereEqualTo("email", Email)
-                .whereEqualTo("password", Password)
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        QuerySnapshot querySnapshot = task.getResult();
-                        if (querySnapshot.isEmpty()) {
-                            Toast.makeText(Login.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
-                        } else {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Map<String, Object> user = document.getData();
-                                boolean emailVerified = (boolean) user.get("emailVerified");
-                                if (emailVerified) {
-                                    progressBar.setVisibility(View.VISIBLE);
-                                    //Toast.makeText(Login.this, "All good", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(Login.this, MainActivity.class));
-                                } else {
-                                    Toast.makeText(Login.this, "Check your email to verify your account \n " +
-                                            "Make sure to check spam folder!", Toast.LENGTH_LONG).show();
-                                }
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            if (user.isEmailVerified()) {
+                                progressBar.setVisibility(View.VISIBLE);
+                                startActivity(new Intent(Login.this, MainActivity.class));
+                            } else {
+                                user.sendEmailVerification();
+                                Toast.makeText(Login.this, "Check your email to verify your account \n " +
+                                        "Make sure to check spam folder!", Toast.LENGTH_LONG).show();
                             }
+                        } else {
+                            Toast.makeText(Login.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
                         }
-                    } else {
-                        Toast.makeText(Login.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
                     }
-                    progressBar.setVisibility(View.GONE);
-                });*/
+                });
+        /*
         db.collection("users")
                    .get()
                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -220,7 +215,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                            }
                        }
                    });
-
+            */
 
     }
 
