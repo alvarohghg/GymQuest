@@ -1,4 +1,4 @@
-# GymQuest contributing guide <!-- omit in toc -->
+# GymQuest contributing guide 📚💪 <!-- omit in toc -->
 Firstly, we want to thank you for considering contributing to our project, since it's the people like you who make the app grow better!
 
 We are open to **any type of contribution** such as:
