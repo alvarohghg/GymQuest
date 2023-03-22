@@ -3,7 +3,6 @@ package com.example.alejandro_luna;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,13 +15,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -34,7 +29,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     private TextView registerUser;
     private ImageView banner;
-    private EditText name, surname, birth, email, password, confirmPassword;
+    private EditText name, surname, height,kg,kcal, email, password, confirmPassword;
     private ProgressBar progressBar;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -53,11 +48,13 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         registerUser.setOnClickListener(this);
 
         name = (EditText) findViewById(R.id.registerFirstName);
-        surname = (EditText) findViewById(R.id.registerSurname);
-        birth = (EditText) findViewById(R.id.registerBirth);
         email = (EditText) findViewById(R.id.registerEmail);
         password = (EditText) findViewById(R.id.registerPassword);
         confirmPassword = (EditText) findViewById(R.id.registerConfirmPassword);
+
+        height = (EditText) findViewById(R.id.registerHeight);
+        kg = (EditText) findViewById(R.id.registerKg);
+        kcal = (EditText) findViewById(R.id.registerKcal);
 
         progressBar = (ProgressBar) findViewById(R.id.registerProgressBar);
 
@@ -82,34 +79,40 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
 
         String Name = name.getText().toString().trim();
-        String Surname = surname.getText().toString().trim();
-        String Birth = birth.getText().toString().trim();
+        String Height = height.getText().toString().trim();
+        String Kg = kg.getText().toString().trim();
+        String Kcal = kcal.getText().toString().trim();
         String Email = email.getText().toString().trim();
         String Password = password.getText().toString().trim();
         String ConfirmPassword = confirmPassword.getText().toString().trim();
 
         Map<String, Object> user = new HashMap<>();
         user.put("name", Name);
-        user.put("surname", Surname);
-        user.put("birth", Birth);
         user.put("email", Email);
         user.put("password", Password);
+        user.put("height", Height);
+        user.put("kcal", Kcal);
+        user.put("kg", Kg);
 
-        if (Name.isEmpty() || Name.matches("First Name")) {
+        if (Name.isEmpty() || Name.matches("Name")) {
             name.setError("Name is required!");
             name.requestFocus();
             return;
         }
 
-        if (Surname.isEmpty() || Surname.matches("Surname")) {
-            surname.setError("Surname is required!");
-            surname.requestFocus();
+        if (Height.isEmpty()) {
+            height.setError("Height is required!");
+            height.requestFocus();
             return;
         }
-
-        if (Birth.isEmpty()) {
-            birth.setError("Birth is required!");
-            birth.requestFocus();
+        if (Kcal.isEmpty()) {
+            kcal.setError("Kcal is required!");
+            kcal.requestFocus();
+            return;
+        }
+        if (Kg.isEmpty()) {
+            kg.setError("Kg is required!");
+            kg.requestFocus();
             return;
         }
         if (Email.isEmpty()) {
