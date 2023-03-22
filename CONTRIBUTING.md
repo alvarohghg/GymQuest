@@ -40,4 +40,5 @@ If you spot a problem with the docs, **search if an issue already exists**. If a
 #### Solve an issue
 
 Scan through our [existing issues](https://github.com/github/docs/issues) to find one that interests you. You can narrow down the search using `labels` as filters. 
-
+### Discussion
+Here you can contribute by proposing ideas to add new features that you find useful, proposing topics to talk about, keeping up to date with the latest news about the app or participating in the polls!
