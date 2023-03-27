@@ -68,4 +68,4 @@ GymQuest is the perfect tool for sports lovers who feel the need to track their 
     
 -   For the user interface design we will be using tools like [Adobe Photoshop](https://www.adobe.com/products/photoshop.html), [Adobe Illustrator](https://www.adobe.com/products/illustrator/free-trial-download.html) and [JustInmind](https://www.justinmind.com/?k=justinmind&a=544612698896&adg=128263103698&cmp=14577474174&match=e&adposition=&utm_medium=cpc&utm_source=google&utm_campaign=14577474174&utm_term=justinmind_e&gclid=Cj0KCQiAx6ugBhCcARIsAGNmMbjYRRMPfYqEYVmoG3NLBxqoWLPwceUlQfsouiB139Ui6-itC4IuP2caAmqHEALw_wcB).
 ## Authors
-This project has been developed by [Álvaro Berjillos](https://github.com/alvarohghg), [Alejandro Luna](https://github.com/AlexLunaP) and [Igor Kuzx](https://github.com/CorkyDork).
+This project is being developed by [Álvaro Berjillos](https://github.com/alvarohghg), [Alejandro Luna](https://github.com/AlexLunaP) and [Igor Kuzx](https://github.com/CorkyDork).
