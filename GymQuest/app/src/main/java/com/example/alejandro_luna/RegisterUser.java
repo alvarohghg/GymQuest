@@ -32,10 +32,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mAuth;
 
     private TextView registerUser;
-    private ImageView banner;
     private EditText name, height,kg,kcal, email, password, confirmPassword;
     private ProgressBar progressBar;
-    //FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -43,10 +41,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
         mAuth = FirebaseAuth.getInstance();
-
-
-        banner = findViewById(R.id.mainBanner);
-        banner.setOnClickListener(this);
 
         registerUser = (Button) findViewById(R.id.registerButton);
         registerUser.setOnClickListener(this);
@@ -152,25 +146,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         }
 
         progressBar.setVisibility(View.VISIBLE);
-        /*
-        db.collection("users").add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(RegisterUser.this, "User Registered", Toast.LENGTH_LONG).show();
-                        progressBar.setVisibility(View.GONE);
-                        startActivity(new Intent(RegisterUser.this, Login.class));
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(RegisterUser.this, "Failed to register", Toast.LENGTH_LONG).show();
-                        progressBar.setVisibility(View.GONE);
-                    }
-                });
 
-            */
         mAuth.createUserWithEmailAndPassword(Email, Password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

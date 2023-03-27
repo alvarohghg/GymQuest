@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgotPassword extends AppCompatActivity implements View.OnClickListener {
-    private ImageView banner;
+
     private EditText email;
     private Button resetPasswordButton;
     private ProgressBar progressBar;
@@ -34,8 +34,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
         email=(EditText) findViewById(R.id.forgotEmail);
         resetPasswordButton=(Button) findViewById(R.id.forgotButton);
         progressBar=(ProgressBar) findViewById(R.id.forgotProgressBar);
-        banner= findViewById(R.id.mainBanner);
-        banner.setOnClickListener(this);
+
 
         auth=FirebaseAuth.getInstance();
         resetPasswordButton.setOnClickListener(new View.OnClickListener() {
