@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Alejandro_Luna</string>
-    <string name="app_title">SmartFit</string>
-    <string name="powered_by">Developed by Alejandro Luna Puerto</string>
+    <string name="app_name">GymQuest</string>
+    <string name="app_title">GymQuest</string>
+    <string name="powered_by">Developed by \n Alejandro, Alvaro and Igor </string>
     <string name="powered_by_android">Powered by Android</string>
 </resources>

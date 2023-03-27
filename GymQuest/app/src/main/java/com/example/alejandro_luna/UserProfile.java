@@ -71,7 +71,6 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
                     settingsKg.setText(kg);
                     settingsKcal.setText(kcal);
 
-
                 }
             }
 

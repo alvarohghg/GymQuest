@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="108dp"
         android:text="@string/powered_by"
-        android:textColor="#EF6C00"
+        android:textAlignment="center"
+        android:textColor="#FAB96C"
         android:textSize="16sp"
         android:textStyle="bold"
         android:visibility="visible"
@@ -51,14 +52,14 @@
 
     <ImageView
         android:id="@+id/appTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="373dp"
+        android:layout_height="314dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.242"
-        app:srcCompat="@drawable/smart_fit_logo1" />
+        app:srcCompat="@drawable/lognotext2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
