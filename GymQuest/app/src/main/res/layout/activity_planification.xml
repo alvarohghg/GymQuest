@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    tools:context=".planification">
+
+    <TextView
+        android:id="@+id/planificationBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:fontFamily="sans-serif-black"
+        android:outlineProvider="none"
+        android:text="My planification"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <Button
+        android:id="@+id/planificationMonday"
+        android:layout_width="111dp"
+        android:layout_height="59dp"
+        android:text="Monday"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.205" />
+
+    <Button
+        android:id="@+id/planificationTuesday"
+        android:layout_width="111dp"
+        android:layout_height="59dp"
+        android:text="Tuesday"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315" />
+
+    <Button
+        android:id="@+id/planificationWednesday"
+        android:layout_width="141dp"
+        android:layout_height="50dp"
+        android:text="Wednesday"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
+
+    <Button
+        android:id="@+id/planificationThursday"
+        android:layout_width="126dp"
+        android:layout_height="56dp"
+        android:text="Thursday"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538" />
+
+    <Button
+        android:id="@+id/planificationFriday"
+        android:layout_width="111dp"
+        android:layout_height="59dp"
+        android:text="Friday"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656" />
+
+    <Button
+        android:id="@+id/planificationSaturday"
+        android:layout_width="135dp"
+        android:layout_height="59dp"
+        android:text="Saturday"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.766" />
+
+    <Button
+        android:id="@+id/planificationSunday"
+        android:layout_width="111dp"
+        android:layout_height="59dp"
+        android:text="Sunday"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88" />
+</androidx.constraintlayout.widget.ConstraintLayout>

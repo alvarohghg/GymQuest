@@ -17,10 +17,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button logoutButton;
+    private Button logoutButton,planificationButton;
 
     private ImageView userProfile;
-    private TextView exerciseTV, weightTV, repsTV;
     ArrayList<String> exercises = new ArrayList<>();
 
     RecyclerViewAdapter recyclerViewAdapter;
@@ -31,12 +30,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        exerciseTV = findViewById(R.id.exerciseET);
-        weightTV = findViewById(R.id.weightET);
-        repsTV = findViewById(R.id.repsET);
 
 
-
+        planificationButton=(Button)findViewById(R.id.mainPlanification);
+        planificationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, planification.class));
+            }
+        });
         logoutButton=(Button) findViewById(R.id.signOut);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,22 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.bt_save:
-                exercises.add(exerciseTV.getText().toString() + " with " + weightTV.getText().toString() + " kg for " + repsTV.getText().toString() + " reps");
 
-                RecyclerView recyclerView = findViewById(R.id.rvExercises);
-                recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                recyclerViewAdapter = new RecyclerViewAdapter(this, exercises);
-                recyclerView.setAdapter(recyclerViewAdapter);
-                break;
-
-            case R.id.bt_clear:
-                exerciseTV.setText("");
-                weightTV.setText("");
-                repsTV.setText("");
-
-                break;
-        }
     }
 }

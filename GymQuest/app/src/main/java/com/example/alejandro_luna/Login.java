@@ -37,6 +37,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private ImageView needHelp;
     private static final String TAG = "LoginActivity";
 
+
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -81,6 +82,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         forgotPassword=(TextView) findViewById(R.id.forgot);
         forgotPassword.setOnClickListener(this);
+
+
 
         //googleButton=(SignInButton) findViewById(R.id.mainGoogle);
 
