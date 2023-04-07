@@ -57,47 +57,46 @@ public class Monday extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        
+
         mondayRemoveRoutine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtener la referencia a la base de datos
+                // Obtain the reference to the database
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference userRef = database.getReference("user-day");
 
-                // Buscar el usuario actual en la base de datos
+                // Find the current user in the database
                 Query query = userRef.orderByChild("email").equalTo(currentUserEmail);
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                            // Obtener la lista actual de rutinas en monday
                             String currentRoutines = (String) userSnapshot.child("monday").getValue();
                             if (currentRoutines == null) {
-                                // Si la lista está vacía, mostrar un mensaje de error y salir
+                                // If the list is empty, show an error message and exit
                                 Toast.makeText(getApplicationContext(), "Monday routines list is empty", Toast.LENGTH_SHORT).show();
                                 return;
                             }
 
-                            // Separar la lista por comas en un array de strings
+                            // Split the list by commas into an array of strings
                             String[] routinesArray = currentRoutines.split(",");
 
                             if (routinesArray.length == 0) {
-                                // Si la lista está vacía, mostrar un mensaje de error y salir
+                                // If the list is empty, show an error message and exit
                                 Toast.makeText(getApplicationContext(), "Monday routines list is empty", Toast.LENGTH_SHORT).show();
                                 return;
                             }
 
-                            // Eliminar el último elemento del array
+                            // Erasing last element of array
                             String[] updatedRoutinesArray = Arrays.copyOf(routinesArray, routinesArray.length - 1);
 
-                            // Concatenar el array actualizado en una lista separada por comas
+                            // Concatenate the updated array into a comma-separated list
                             String updatedRoutines = TextUtils.join(",", updatedRoutinesArray);
 
-                            // Actualizar el valor en la base de datos
+                            // Update the value in the database
                             userSnapshot.getRef().child("monday").setValue(updatedRoutines);
 
-                            // Mostrar mensaje de éxito
+                            // Show success message
                             Toast.makeText(getApplicationContext(), "Last routine removed from Monday", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -142,29 +141,29 @@ public class Monday extends AppCompatActivity {
 
                 String selectedRoutine = (String) parent.getItemAtPosition(position);
 
-                // Obtener la referencia a la base de datos
+                // Get a reference to the database
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference userRef = database.getReference("user-day");
 
-                // Buscar el usuario actual en la base de datos
+                // Find the current user in the database
                 Query query = userRef.orderByChild("email").equalTo(currentUserEmail);
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                            // Obtener el valor actual de la lista de rutinas en monday
+                            // Get the current value of the routine list in monday
                             String currentRoutines = (String) userSnapshot.child("monday").getValue();
                             if (currentRoutines == null) {
                                 currentRoutines = "";
                             }
 
-                            // Concatenar el valor seleccionado con la lista actual
+                            // Concatenate the selected value with the current list
                             String updatedRoutines = selectedRoutine + "," + currentRoutines;
 
-                            // Actualizar el valor en la base de datos
+                            // Update the value in the database
                             userSnapshot.getRef().child("monday").setValue(updatedRoutines);
 
-                            // Mostrar mensaje de éxito
+                            // Show success message
                             Toast.makeText(getApplicationContext(), "Routine added to Monday", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -176,6 +175,7 @@ public class Monday extends AppCompatActivity {
                 });
             }
         });
+
 
 
 
