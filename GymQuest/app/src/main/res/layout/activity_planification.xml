@@ -8,6 +8,67 @@
     tools:context=".planification">
 
     <TextView
+        android:id="@+id/planificationDuration"
+        android:layout_width="92dp"
+        android:layout_height="34dp"
+        android:text="hours"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <TextView
+        android:id="@+id/durationText2"
+        android:layout_width="92dp"
+        android:layout_height="34dp"
+        android:text="Duration:"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <TextView
+        android:id="@+id/planificationRoutine"
+        android:layout_width="135dp"
+        android:layout_height="32dp"
+        android:fontFamily="sans-serif-black"
+        android:outlineProvider="none"
+        android:text="Routine"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.121" />
+
+    <TextView
+        android:id="@+id/routineBannerexercises2"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:fontFamily="sans-serif-black"
+        android:outlineProvider="none"
+        android:text="Exercises"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
         android:id="@+id/planificationBanner"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
@@ -19,85 +80,35 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <Button
         android:id="@+id/planificationMonday"
-        android:layout_width="111dp"
-        android:layout_height="59dp"
-        android:text="Monday"
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        android:background="@drawable/roundedbutton"
+        android:text="M"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205" />
+        app:layout_constraintHorizontal_bias="0.043"
 
-    <Button
-        android:id="@+id/planificationTuesday"
-        android:layout_width="111dp"
-        android:layout_height="59dp"
-        android:text="Tuesday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintVertical_bias="0.206" />
 
-    <Button
-        android:id="@+id/planificationWednesday"
-        android:layout_width="141dp"
-        android:layout_height="50dp"
-        android:text="Wednesday"
+    <ListView
+        android:id="@+id/planificationExercises"
+        android:layout_width="334dp"
+        android:layout_height="379dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
+        app:layout_constraintVertical_bias="0.682" />
 
-    <Button
-        android:id="@+id/planificationThursday"
-        android:layout_width="126dp"
-        android:layout_height="56dp"
-        android:text="Thursday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
-
-    <Button
-        android:id="@+id/planificationFriday"
-        android:layout_width="111dp"
-        android:layout_height="59dp"
-        android:text="Friday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656" />
-
-    <Button
-        android:id="@+id/planificationSaturday"
-        android:layout_width="135dp"
-        android:layout_height="59dp"
-        android:text="Saturday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
-
-    <Button
-        android:id="@+id/planificationSunday"
-        android:layout_width="111dp"
-        android:layout_height="59dp"
-        android:text="Sunday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
 </androidx.constraintlayout.widget.ConstraintLayout>
