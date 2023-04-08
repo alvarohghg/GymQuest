@@ -7,30 +7,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.alejandro_luna.Login;
-import com.example.alejandro_luna.R;
-import com.example.alejandro_luna.RecyclerViewAdapter;
-import com.example.alejandro_luna.UserProfile;
-import com.example.alejandro_luna.planification;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -38,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button logoutButton, planificationButton;
     private ImageView userProfile;
 
-    RecyclerViewAdapter recyclerViewAdapter;
+
 
     String currentUserEmail;
 

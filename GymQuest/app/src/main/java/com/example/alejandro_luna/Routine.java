@@ -16,4 +16,10 @@ public class Routine {
     public String getTitle() {
         return title;
     }
+    public String getDuration() {
+        return duration;
+    }
+    public String getExercises() {
+        return exercises;
+    }
 }

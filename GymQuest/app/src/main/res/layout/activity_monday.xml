@@ -69,21 +69,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.937" />
 
-    <TextView
-        android:id="@+id/mondayRoutines"
-        android:layout_width="236dp"
-        android:layout_height="243dp"
-        android:background="#4DFFFFFF"
-        android:lineSpacingExtra="8sp"
-        android:text="TextView"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/mondayBanner2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.411"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94" />
-
     <ImageView
         android:id="@+id/mondayRemoveRoutine"
         android:layout_width="36dp"
@@ -95,5 +80,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.172"
         app:srcCompat="@drawable/ic_remove_24px" />
+
+    <ListView
+        android:id="@+id/monday_routines_listview"
+        android:layout_width="273dp"
+        android:layout_height="210dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

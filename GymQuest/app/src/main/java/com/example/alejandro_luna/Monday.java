@@ -37,8 +37,7 @@ import java.util.Map;
 
 public class Monday extends AppCompatActivity {
 
-    private ListView mondayAddRoutines;
-    private TextView mondayList;
+    private ListView mondayAddRoutines,mondayRoutinesListView;
     private ImageView mondayRemoveRoutine;
     private static final String TAG = "Mondayyyy";
 
@@ -50,10 +49,10 @@ public class Monday extends AppCompatActivity {
 
 
 
-        mondayList = findViewById(R.id.mondayRoutines);
+
         mondayAddRoutines=findViewById(R.id.mondayAddRoutines);
         mondayRemoveRoutine=findViewById(R.id.mondayRemoveRoutine);
-
+        mondayRoutinesListView = findViewById(R.id.monday_routines_listview);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
@@ -177,42 +176,65 @@ public class Monday extends AppCompatActivity {
         });
 
 
-
-
+        //show the user's routines
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new ArrayList<>());
+        mondayRoutinesListView.setAdapter(adapter);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference userRef = database.getReference("user-day");
+        Query query = userRef.orderByChild("email").equalTo(currentUserEmail);
 
 
-        userRef.addValueEventListener(new ValueEventListener() {
+        query.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    Map<String, Object> userData = (Map<String, Object>) userSnapshot.getValue();
-                    if (userData != null && userData.get("email") != null && userData.get("email").equals(currentUserEmail)) {
-                        String mondayValue = (String) userData.get("monday");
-                        if (mondayValue != null) {
-                            if (mondayValue != null) {
-                                String[] values = mondayValue.split(",");
-                                StringBuilder sb = new StringBuilder();
-                                for (String value : values) {
-                                    sb.append(value.trim()).append("\n");
-                                }
-                                mondayList.setText(sb.toString());
-                            }
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                            //mondayList.setText(mondayValue);
-                        }
-                        break;
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    String currentRoutines = (String) userSnapshot.child("monday").getValue();
+                    if (currentRoutines == null) {
+                        adapter.clear();
+                    } else {
+                        String[] routinesArray = currentRoutines.split(",");
+                        List<String> routineList = Arrays.asList(routinesArray);
+
+
+                        adapter.clear();
+                        adapter.addAll(routineList);
                     }
+
+
+                    adapter.notifyDataSetChanged();
                 }
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
             }
         });
+
+        //if the user clicks on a routine then its leaded to an activity where
+        //the exercises are shown
+        //here the user can add routines
+        mondayRoutinesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedRoutine = (String) parent.getItemAtPosition(position);
+
+                // Crear un Intent para la nueva actividad
+                Intent intent = new Intent(Monday.this, RoutineList.class);
+
+
+                // Agregar el string como un extra en el Intent
+                intent.putExtra("SELECTED_ROUTINE", selectedRoutine);
+
+
+                // Iniciar la nueva actividad
+                startActivity(intent);
+            }
+        });
+
+
 
 
 
