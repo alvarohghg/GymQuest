@@ -30,7 +30,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class planification extends AppCompatActivity {
-    private Button Monday;
+    private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday;
     private TextView planificationRoutine,planificationDuration;
     private ListView planificationExercises;
     @SuppressLint("MissingInflatedId")
@@ -39,6 +39,14 @@ public class planification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planification);
         Monday=(Button) findViewById(R.id.planificationMonday);
+        Tuesday=(Button)findViewById(R.id.planificationTuesday);
+        Wednesday=(Button)findViewById(R.id.planificationWednesday);
+        Thursday=(Button)findViewById(R.id.planificationThursday);
+        Friday=(Button)findViewById(R.id.planificationFriday);
+        Saturday=(Button)findViewById(R.id.planificationSaturday);
+        Sunday=(Button)findViewById(R.id.planificationSunday);
+
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         planificationRoutine=findViewById(R.id.planificationRoutine);
@@ -48,79 +56,92 @@ public class planification extends AppCompatActivity {
         Monday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference userRef = database.getReference("user-day");
-                Query query = userRef.orderByChild("email").equalTo(currentUserEmail);
-
-
-                query.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                            //change the routine text
-                            String currentRoutine = (String) userSnapshot.child("monday").getValue();
-                            planificationRoutine.setText(currentRoutine);
-                            DatabaseReference routinesRef = FirebaseDatabase.getInstance().getReference().child("routines");
-
-                            routinesRef.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    for (DataSnapshot childSnapshot : snapshot.getChildren()) {
-                                        if (childSnapshot.getKey().equals(currentRoutine)) {
-                                            //change the duration text
-                                            String duration = childSnapshot.child("duration").getValue(String.class);
-                                            planificationDuration.setText(duration);
-                                        }
-                                    }
-
-
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-                                    Log.e(TAG, "Error retrieving routines: " + error.getMessage());
-                                }
-                            });
-
-                            routinesRef.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    // Obtener la rutina correspondiente a la currentRoutine
-                                    for (DataSnapshot routineSnapshot : dataSnapshot.getChildren()) {
-                                        String routineName = routineSnapshot.child("title").getValue(String.class);
-                                        if (routineName.equals(currentRoutine)) {
-                                            // Obtener la lista de ejercicios
-                                            String exercisesString = routineSnapshot.child("exercises").getValue(String.class);
-                                            List<String> exercisesList = Arrays.asList(exercisesString.split(","));
-                                            // Mostrar la lista de ejercicios en la ListView
-                                            ArrayAdapter<String> adapter = new ArrayAdapter<>(planification.this, android.R.layout.simple_list_item_1, exercisesList);
-                                            planificationExercises.setAdapter(adapter);
-                                            break;
-                                        }
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-                                    Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                                }
-                            });
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                    }
-                });
-
-
-
+                displayRoutineForDay("monday");
+            }
+        });
+        Tuesday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayRoutineForDay("tuesday");
+            }
+        });
+        Wednesday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayRoutineForDay("wednesday");
+            }
+        });
+        Thursday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayRoutineForDay("thursday");
+            }
+        });
+        Friday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayRoutineForDay("friday");
+            }
+        });
+        Saturday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayRoutineForDay("saturday");
+            }
+        });
+        Sunday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayRoutineForDay("sunday");
             }
         });
 
+
     }
+    private void displayRoutineForDay(String day) {
+        // Show the user's routines
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = database.getReference("user-day");
+        String currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        Query query = userRef.orderByChild("email").equalTo(currentUserEmail);
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    String currentRoutine = (String) userSnapshot.child(day.toLowerCase()).getValue();
+                    if (currentRoutine != null) {
+                        // Find the routine in the "routines" collection
+                        DatabaseReference routinesRef = FirebaseDatabase.getInstance().getReference().child("routines");
+                        Query routineQuery = routinesRef.orderByChild("title").equalTo(currentRoutine);
+                        routineQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                for (DataSnapshot routineSnapshot : dataSnapshot.getChildren()) {
+                                    String duration = routineSnapshot.child("duration").getValue(String.class);
+                                    String exercisesString = routineSnapshot.child("exercises").getValue(String.class);
+                                    List<String> exercises = Arrays.asList(exercisesString.split(","));
+                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(planification.this, android.R.layout.simple_list_item_1, exercises);
+                                    planificationExercises.setAdapter(adapter);
+                                    planificationDuration.setText(duration);
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                Log.e(TAG, "Error retrieving routines: " + databaseError.getMessage());
+                            }
+                        });
+                        break;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e(TAG, "Error retrieving user-day: " + databaseError.getMessage());
+            }
+        });
+    }
+
 }

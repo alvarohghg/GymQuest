@@ -13,13 +13,6 @@
         android:theme="@style/Theme.Alejandro_Luna"
         tools:targetApi="31">
         <activity
-            android:name=".Monday"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".planification"
             android:exported="false">
             <meta-data
@@ -76,13 +69,6 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".RoutineList"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

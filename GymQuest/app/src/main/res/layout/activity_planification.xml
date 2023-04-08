@@ -7,6 +7,81 @@
     android:background="@drawable/login_background"
     tools:context=".planification">
 
+    <Button
+        android:id="@+id/planificationSaturday"
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        android:background="@drawable/roundedbutton"
+        android:text="S"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662" />
+
+    <Button
+        android:id="@+id/planificationSunday"
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        android:background="@drawable/roundedbutton"
+        android:text="S"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.748" />
+
+    <Button
+        android:id="@+id/planificationFriday"
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        android:background="@drawable/roundedbutton"
+        android:text="F"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.574" />
+
+    <Button
+        android:id="@+id/planificationWednesday"
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        android:background="@drawable/roundedbutton"
+        android:text="W"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.387" />
+
+    <Button
+        android:id="@+id/planificationThursday"
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        android:background="@drawable/roundedbutton"
+        android:text="T"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.482" />
+
     <TextView
         android:id="@+id/planificationDuration"
         android:layout_width="92dp"
@@ -99,6 +174,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.206" />
+
+    <Button
+        android:id="@+id/planificationTuesday"
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        android:background="@drawable/roundedbutton"
+        android:text="T"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.295" />
 
     <ListView
         android:id="@+id/planificationExercises"
