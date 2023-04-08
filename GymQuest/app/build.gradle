@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.example.alejandro_luna'
+    namespace 'com.example.gymquest'
     compileSdk 33
 
     defaultConfig {
