@@ -1,4 +1,4 @@
-package com.example.alejandro_luna;
+package com.example.gymquest;
 
 import android.content.Context;
 
