@@ -1,4 +1,4 @@
-package com.example.gymquest;
+package com.example.alejandro_luna;
 
 public class User {
     public String name,height,kcal,email,password,kg;

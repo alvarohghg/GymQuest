@@ -1,4 +1,4 @@
-package com.example.gymquest;
+package com.example.alejandro_luna;
 
 public class Routine {
     public String title,duration,exercises;

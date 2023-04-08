@@ -1,4 +1,4 @@
-package com.example.gymquest;
+package com.example.alejandro_luna;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
