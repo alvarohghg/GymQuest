@@ -191,7 +191,7 @@
         app:layout_constraintVertical_bias="0.295" />
 
     <ListView
-        android:id="@+id/planificationExercises"
+        android:id="@+id/editRoutineList"
         android:layout_width="334dp"
         android:layout_height="379dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -200,5 +200,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.682" />
+
+    <ImageView
+        android:id="@+id/planificationEdit"
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
