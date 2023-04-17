@@ -7,13 +7,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +40,7 @@ public class editRoutine extends AppCompatActivity {
     private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday;
     private TextView editRoutineCurrentRoutine;
     private ListView editRoutineList;
+    String day="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +55,10 @@ public class editRoutine extends AppCompatActivity {
         editRoutineCurrentRoutine=(TextView)findViewById(R.id.editRoutineCurrentRoutine);
         editRoutineList=(ListView)findViewById(R.id.editRoutineList);
 
+
         //show all the routines available
         DatabaseReference routinesRef = FirebaseDatabase.getInstance().getReference().child("routines");
+
 
         routinesRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -67,7 +73,9 @@ public class editRoutine extends AppCompatActivity {
                 // Create a ListView adapter with the list of routine titles
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(editRoutine.this, android.R.layout.simple_list_item_1, routineTitles);
                 editRoutineList.setAdapter(adapter); // Set the adapter to your ListView
+
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -78,49 +86,79 @@ public class editRoutine extends AppCompatActivity {
 
 
 
+
+
         Monday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 displayRoutineForDay("monday");
+                day="monday";
+                //Toast.makeText(editRoutine.this, "Selected day: " + day, Toast.LENGTH_SHORT).show();
+
             }
         });
         Tuesday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 displayRoutineForDay("tuesday");
+
+                day="tuesday";
             }
         });
         Wednesday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 displayRoutineForDay("wednesday");
+
+                day="wednesday";
             }
         });
         Thursday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 displayRoutineForDay("thursday");
+
+                day="thursday";
             }
         });
         Friday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 displayRoutineForDay("friday");
+
+                day="friday";
             }
         });
         Saturday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 displayRoutineForDay("saturday");
+                day="saturday";
             }
         });
         Sunday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 displayRoutineForDay("sunday");
+
+                day="sunday";
             }
         });
 
+
+        editRoutineList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected routine title from the ArrayAdapter
+                String selectedRoutine =parent.getItemAtPosition(position).toString();
+                //Toast.makeText(editRoutine.this, "Selected routine: " + selectedRoutine, Toast.LENGTH_SHORT).show();
+
+                updateRoutineForDay(day, selectedRoutine);
+
+
+
+            }
+        });
 
 
     }
@@ -147,4 +185,31 @@ public class editRoutine extends AppCompatActivity {
             }
         });
     }
+
+    private void updateRoutineForDay(String day, String selectedRoutine) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userDayRef = database.getReference("user-day");
+        String currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        Query query = userDayRef.orderByChild("email").equalTo(currentUserEmail);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    DatabaseReference userDayRefToUpdate = snapshot.getRef();
+                    if(!selectedRoutine.isEmpty() && !day.isEmpty() ){
+                        userDayRefToUpdate.child(day).setValue(selectedRoutine);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Manejar errores de lectura de la base de datos
+            }
+        });
+    }
+
+
+
+
 }
