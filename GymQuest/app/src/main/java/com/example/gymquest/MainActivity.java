@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView userProfile;
 
     // new comment
+    // alex comment
 
     String currentUserEmail;
 
