@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button logoutButton, planificationButton;
     private ImageView userProfile;
 
-
+    // new comment
 
     String currentUserEmail;
 
