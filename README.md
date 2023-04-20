@@ -1,5 +1,9 @@
 # 🏋️‍♀️GymQuest 📝<!-- omit in toc -->
-![enter image description here](https://lh6.googleusercontent.com/N5awedbD4pNJdfcsCcmZwBSUIhLXeRMvrZs5-EQyTmI2WqZXfFFe77RinOV8p2LYqB-p8SGpCHNf99XXXxmy3Ly5lDFDDrnTD2I6eNUe9-vLYLs1zl5EpFdwKigLC8Wqo0_4t9HN17TNDEh5SQFhb5w)
+
+<p align="center">
+<img src="https://lh6.googleusercontent.com/N5awedbD4pNJdfcsCcmZwBSUIhLXeRMvrZs5-EQyTmI2WqZXfFFe77RinOV8p2LYqB-p8SGpCHNf99XXXxmy3Ly5lDFDDrnTD2I6eNUe9-vLYLs1zl5EpFdwKigLC8Wqo0_4t9HN17TNDEh5SQFhb5w"  width="400" height="300" alt="Image of a workout planner mobile app">
+</p>
+
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
