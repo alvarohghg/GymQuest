@@ -2,7 +2,6 @@
 ![](https://lh6.googleusercontent.com/N5awedbD4pNJdfcsCcmZwBSUIhLXeRMvrZs5-EQyTmI2WqZXfFFe77RinOV8p2LYqB-p8SGpCHNf99XXXxmy3Ly5lDFDDrnTD2I6eNUe9-vLYLs1zl5EpFdwKigLC8Wqo0_4t9HN17TNDEh5SQFhb5w)
 
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
@@ -80,12 +79,10 @@ This project is being developed by [Álvaro Berjillos](https://github.com/alvaro
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[contributors-url]: https://github.com/alvarohghg/GymQuest/graphs/contributors
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[stars-url]: https://github.com/alvarohghg/GymQuest/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[issues-url]: https://github.com/othneildrew/alvarohghg/GymQuest/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[license-url]: https://github.com/alvarohghg/GymQuest/blob/main/LICENSE
