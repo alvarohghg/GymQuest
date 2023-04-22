@@ -29,7 +29,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 import java.util.List;
 
-public class planification extends AppCompatActivity {
+public class Planification extends AppCompatActivity {
     private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday;
     private TextView planificationRoutine,planificationDuration;
     private ListView planificationExercises;
@@ -58,7 +58,7 @@ public class planification extends AppCompatActivity {
         planificationEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(planification.this, editRoutine.class));
+                startActivity(new Intent(Planification.this, EditRoutine.class));
             }
         });
 
@@ -132,7 +132,7 @@ public class planification extends AppCompatActivity {
                                     String duration = routineSnapshot.child("duration").getValue(String.class);
                                     String exercisesString = routineSnapshot.child("exercises").getValue(String.class);
                                     List<String> exercises = Arrays.asList(exercisesString.split(","));
-                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(planification.this, android.R.layout.simple_list_item_1, exercises);
+                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Planification.this, android.R.layout.simple_list_item_1, exercises);
                                     planificationExercises.setAdapter(adapter);
                                     planificationDuration.setText(duration);
                                 }
