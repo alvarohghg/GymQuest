@@ -138,6 +138,7 @@ We are open to  **any type of contribution**  such as:
 -   Opening a discussion
 
 Check the [contributing guidelines](https://github.com/alvarohghg/GymQuest/blob/main/CONTRIBUTING.md) for more details!
+Also, take a look at the [current issues](https://github.com/alvarohghg/GymQuest/issues)
 
 ##### Quick contribution example:
 1. Fork the Project
