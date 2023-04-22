@@ -140,32 +140,34 @@ _Below is an example of how you can instruct your audience on installing and set
    const API_KEY = 'ENTER YOUR API';
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Firstly, we want to thank you for considering contributing to our project, since it's the people like you who make the app grow better!
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+We are open to  **any type of contribution**  such as:
 
+-   Proposing pull request to improve the code
+-   Submitting bug/issues reports
+-   Making suggestions
+-   Making questions in the issue section (search to see if someone else didn't ask the same question before!)
+-   Opening a discussion
+
+Check the [contributing guidelines](https://github.com/alvarohghg/GymQuest/blob/main/CONTRIBUTING.md) for more details!
+
+##### Quick contribution example:
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. Check `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
     
    
 <!-- CONTACT -->
