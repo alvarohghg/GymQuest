@@ -115,30 +115,13 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+To work with GymQuest project you will need to have  [![Java][Java]][JavaInstall-url] and
+[![AndroidStudio][AndroidStudio]][AndroidStudio-url] installed in your system.
 
 ### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+At the moment there is no apk for GymQuest. Meanwhile, you can run the app using:
+* [Android Studio Emulator]
+* [Your own Android device]
 
 
 <!-- CONTRIBUTING -->
@@ -183,9 +166,12 @@ Project Link: https://github.com/alvarohghg/GymQuest
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [Java]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
 [Java-url]: https://www.java.com/en/download/help/whatis_java.html
+[JavaInstall-url]: https://www.java.com/en/download/help/download_options.html
 
 [AndroidStudio]: https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white
 [AndroidStudio-url]: https://developer.android.com/studio?gclid=CjwKCAjw6IiiBhAOEiwALNqncVKJnYi9Pab9pCHXgfmtnSQrVHzXo-cEhd9RqaA_U7kPLPhsRTiWcRoCk2UQAvD_BwE&gclsrc=aw.ds
+[Android Studio Emulator]: https://developer.android.com/studio/run/emulator
+[Your own android device]: https://developer.android.com/studio/run/device
 
 [Firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white
 [Firebase-url]: https://firebase.google.com/
