@@ -9,6 +9,15 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <!-- Strings used for the reset password -->
+    <string name="forgot_your_password">Forgot your password ?</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="reset_password">RESET PASSWORD</string>
+    <string name="information_menu_image_description">The i letter inside a circle, signifies an information</string>
+    <string name="remember_check_spam_folder">Remember to check your Spam Folder</string>
+
+
+
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
