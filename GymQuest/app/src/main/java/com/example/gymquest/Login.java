@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +46,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     /*private SignInButton googleButton;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;*/
+
+    private Spinner spinner_languages;
+    private LanguageAdapter languageAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +86,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         forgotPassword=(TextView) findViewById(R.id.forgot);
         forgotPassword.setOnClickListener(this);
+
+        spinner_languages = findViewById(R.id.spinner_languages);
+        languageAdapter = new LanguageAdapter(Login.this, Languages.getLanguages());
+        spinner_languages.setAdapter(languageAdapter);
 
 
 

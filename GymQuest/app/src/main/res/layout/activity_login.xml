@@ -21,6 +21,16 @@
         app:srcCompat="@drawable/logonotext"
         tools:visibility="visible" />
 
+    <Spinner
+        android:id="@+id/spinner_languages"
+        android:layout_width="75sp"
+        android:layout_height="50sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10sp"
+        tools:visibility="visible" />
+        />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="267dp"
