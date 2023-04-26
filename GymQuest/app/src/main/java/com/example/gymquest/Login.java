@@ -3,9 +3,9 @@ package com.example.gymquest;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -17,20 +17,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gymquest.Language.Language;
+import com.example.gymquest.Language.LanguageAdapter;
+import com.example.gymquest.Language.LanguageManager;
+import com.example.gymquest.Language.Languages;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.Map;
-
-public class Login extends AppCompatActivity implements View.OnClickListener{
+public class Login extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private TextView register, forgotPassword;
     private EditText email,password;
@@ -49,6 +47,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
     private Spinner spinner_languages;
     private LanguageAdapter languageAdapter;
+
+    private static String current_lang_code = "en";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,10 +87,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         forgotPassword=(TextView) findViewById(R.id.forgot);
         forgotPassword.setOnClickListener(this);
 
-        spinner_languages = findViewById(R.id.spinner_languages);
+        spinner_languages = (Spinner) findViewById(R.id.spinner_languages);
         languageAdapter = new LanguageAdapter(Login.this, Languages.getLanguages());
         spinner_languages.setAdapter(languageAdapter);
-
+        spinner_languages.setOnItemSelectedListener(this);
 
 
         //googleButton=(SignInButton) findViewById(R.id.mainGoogle);
@@ -154,9 +154,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             case R.id.forgot:
                 startActivity(new Intent(this, ForgotPassword.class));
                 break;
-
         }
     }
+
 
     private void userLogin() {
 
@@ -230,4 +230,31 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        try{
+            int pos = Integer.parseInt(text);
+            String chosen_language_code =Languages.getLanguages().get(pos).getLanguage_code();
+
+            if(current_lang_code.equals(chosen_language_code)){
+                return;
+            }
+
+            current_lang_code=chosen_language_code;
+
+            LanguageManager lang = new LanguageManager(Login.this);
+            lang.updateRessource(chosen_language_code);
+            Login.this.recreate();
+        }
+        catch (NumberFormatException e){
+            Toast.makeText(this.getApplicationContext(), "Problem during a cast : "+e, Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }

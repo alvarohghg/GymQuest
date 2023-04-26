@@ -1,9 +1,10 @@
-package com.example.gymquest;
+package com.example.gymquest.Language;
 import java.io.Serializable;
 
 public class Language implements Serializable {
     private String name;
     private int image;
+    private String language_code;
 
     public Language(){
     }
@@ -18,5 +19,11 @@ public class Language implements Serializable {
     }
     public void setImage(int image) {
         this.image = image;
+    }
+    public void setLanguage_code(String language_code) {
+        this.language_code = language_code;
+    }
+    public String getLanguage_code() {
+        return language_code;
     }
 }

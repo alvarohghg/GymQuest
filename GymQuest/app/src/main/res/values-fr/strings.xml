@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GymQuest</string>
+    <string name="app_title">GymQuest</string>
+    <string name="powered_by">Développé par \n Alejandro, Alvaro et Igor </string>
+    <string name="powered_by_android">Powered by Android</string>
+    <string name="title_activity_routine_list">Liste de la routine</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Premier Fragment</string>
+    <string name="second_fragment_label">Deuxième Fragment</string>
+    <string name="next">Prochain</string>
+    <string name="previous">Précédent</string>
+
+    <!-- Strings used for reset password -->
+    <string name="forgot_your_password">Mot de passe oublié ?</string>
+    <string name="enter_your_email">Entrez votre email</string>
+    <string name="reset_password">RESET MOT DE PASSE</string>
+    <string name="information_menu_image_description">La lettre i dans un cercle, signifie une information</string>
+    <string name="remember_check_spam_folder">N\'oubliez pas de regarder dans vos spams</string>
+
+    <!-- Strings used for register new user -->
+    <string name="register_new_user">Enregistrer un nouvel utilisateur</string>string>
+    <string name="name">Nom</string>string>
+    <string name="email">Adresse email</string>string>
+    <string name="password">Mot de passe</string>string>
+    <string name="confirm_password">Confirmer le mot de passe</string>string>
+    <string name="height">Hauteur (cm)</string>string>
+    <string name="kg">Kg</string>string>
+    <string name="kcal">Cible en Kcal</string>string>
+    <string name="register">ENREGISTRER</string>string>
+
+    <string name="hello_first_fragment">Bonjour premier fragment</string>
+    <string name="hello_second_fragment">Bonjour deuxième fragment. Arg: %1$s</string>
+</resources>

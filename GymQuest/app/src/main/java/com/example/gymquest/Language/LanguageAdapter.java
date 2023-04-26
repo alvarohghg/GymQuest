@@ -1,4 +1,4 @@
-package com.example.gymquest;
+package com.example.gymquest.Language;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.gymquest.R;
 
 import java.util.List;
 
@@ -44,7 +46,6 @@ public class LanguageAdapter extends BaseAdapter {
 
         txtName.setText(languages.get(position).getName());
         img.setImageResource(languages.get(position).getImage());
-
         return rootView;
     }
 }
