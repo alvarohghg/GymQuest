@@ -44,10 +44,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener, Ad
     /*private SignInButton googleButton;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;*/
-
-    private Spinner spinner_languages;
-    private LanguageAdapter languageAdapter;
-
     private static String current_lang_code = "en";
 
     @Override
@@ -87,8 +83,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener, Ad
         forgotPassword=(TextView) findViewById(R.id.forgot);
         forgotPassword.setOnClickListener(this);
 
-        spinner_languages = (Spinner) findViewById(R.id.spinner_languages);
-        languageAdapter = new LanguageAdapter(Login.this, Languages.getLanguages());
+        Spinner spinner_languages = (Spinner) findViewById(R.id.spinner_languages);
+        LanguageAdapter languageAdapter = new LanguageAdapter(Login.this, Languages.getLanguages());
         spinner_languages.setAdapter(languageAdapter);
         spinner_languages.setOnItemSelectedListener(this);
 

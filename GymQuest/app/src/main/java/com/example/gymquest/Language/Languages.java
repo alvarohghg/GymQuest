@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Languages {
+    //new languages will be added here to appear on the spinner!
     public static List<Language> getLanguages(){
         List<Language> languages = new ArrayList<>();
 
