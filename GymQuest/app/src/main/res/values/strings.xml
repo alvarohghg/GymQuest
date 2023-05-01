@@ -9,6 +9,15 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="edit_back_content_description">Return</string>
+    <string name="first_name">First Name</string>
+    <string name="surname">Surname</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="submit_changes">Submit changes</string>
+    <string name="edit_profile">Edit profile</string>
+
+
+
 
     <!-- Strings used to reset the user's password -->
     <string name="forgot_your_password">Forgot your password?</string>
