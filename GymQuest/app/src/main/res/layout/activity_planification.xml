@@ -12,7 +12,6 @@
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:background="@drawable/roundedbutton"
-        android:text="S"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
