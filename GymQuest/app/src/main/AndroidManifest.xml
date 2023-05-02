@@ -13,14 +13,22 @@
         android:theme="@style/Theme.Alejandro_Luna"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".EditRoutine"
+=======
+            android:name=".editRoutine"
+>>>>>>> parent of 1258c44 (User can see information of each exercise)
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".Planification"
+=======
+            android:name=".planification"
+>>>>>>> parent of 1258c44 (User can see information of each exercise)
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
