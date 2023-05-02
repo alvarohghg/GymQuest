@@ -39,14 +39,24 @@
 
     <Button
         android:id="@+id/mainPlanification"
-        android:layout_width="172dp"
-        android:layout_height="111dp"
+        android:layout_width="202dp"
+        android:layout_height="78dp"
         android:text="My planification"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintVertical_bias="0.335" />
+
+    <Button
+        android:id="@+id/mainPlanification2"
+        android:layout_width="203dp"
+        android:layout_height="77dp"
+        android:text="Exercises"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
