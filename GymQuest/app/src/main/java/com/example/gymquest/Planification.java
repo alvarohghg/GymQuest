@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -104,6 +105,21 @@ public class Planification extends AppCompatActivity {
                 displayRoutineForDay("sunday");
             }
         });
+        // Agregar el listener a la ListView "planificationExercises"
+        planificationExercises.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedExerciseName = (String) adapterView.getItemAtPosition(i);
+
+                // Crear el Intent para iniciar la actividad "exerciseDisplay" y transmitir el nombre del ejercicio seleccionado
+                Intent intent = new Intent(planification.this, exerciseDisplay.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("selectedExerciseName", selectedExerciseName);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
 
 
     }
