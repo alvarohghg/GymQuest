@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
-    tools:context=".Planification">
+    tools:context=".planification">
 
     <Button
         android:id="@+id/planificationSaturday"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:background="@drawable/roundedbutton"
+        android:text="S"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
-        android:text="S"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.662" />

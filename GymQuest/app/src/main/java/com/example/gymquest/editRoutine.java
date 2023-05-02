@@ -12,22 +12,31 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import com.google.firebase.database.Query;
 
 
-public class EditRoutine extends AppCompatActivity {
+public class editRoutine extends AppCompatActivity {
     private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday;
     private TextView editRoutineCurrentRoutine;
     private ListView editRoutineList;
@@ -62,7 +71,7 @@ public class EditRoutine extends AppCompatActivity {
                 }
 
                 // Create a ListView adapter with the list of routine titles
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(EditRoutine.this, android.R.layout.simple_list_item_1, routineTitles);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(editRoutine.this, android.R.layout.simple_list_item_1, routineTitles);
                 editRoutineList.setAdapter(adapter); // Set the adapter to your ListView
 
             }
