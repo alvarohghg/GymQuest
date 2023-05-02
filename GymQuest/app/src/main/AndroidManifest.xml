@@ -13,37 +13,21 @@
         android:theme="@style/Theme.Alejandro_Luna"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            android:name=".EditRoutine"
-=======
-=======
->>>>>>> parent of 1258c44 (User can see information of each exercise)
-=======
->>>>>>> parent of 1258c44 (User can see information of each exercise)
-=======
->>>>>>> parent of 1258c44 (User can see information of each exercise)
-=======
->>>>>>> parent of 1258c44 (User can see information of each exercise)
-=======
->>>>>>> parent of 1258c44 (User can see information of each exercise)
-            android:name=".editRoutine"
->>>>>>> parent of 1258c44 (User can see information of each exercise)
+            android:name=".ExerciseDisplay"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-<<<<<<< HEAD
+            android:name=".editRoutine"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Planification"
-=======
-            android:name=".planification"
->>>>>>> parent of 1258c44 (User can see information of each exercise)
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

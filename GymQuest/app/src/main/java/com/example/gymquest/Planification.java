@@ -29,7 +29,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 import java.util.List;
 
-public class planification extends AppCompatActivity {
+import android.widget.AdapterView;
+
+public class Planification extends AppCompatActivity {
     private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday;
     private TextView planificationRoutine,planificationDuration;
     private ListView planificationExercises;
@@ -58,7 +60,7 @@ public class planification extends AppCompatActivity {
         planificationEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(planification.this, editRoutine.class));
+                startActivity(new Intent(Planification.this, editRoutine.class));
             }
         });
 
@@ -105,8 +107,23 @@ public class planification extends AppCompatActivity {
             }
         });
 
+        // Add listener to ListView "planificationExercises"
+        planificationExercises.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedExerciseName = (String) adapterView.getItemAtPosition(i);
 
+                // Intent to start activity "exerciseDisplay" and send the name of the selected exercise
+                Intent intent = new Intent(Planification.this, ExerciseDisplay.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("selectedExerciseName", selectedExerciseName);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
+
+
     private void displayRoutineForDay(String day) {
         // Show the user's routines
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -132,7 +149,7 @@ public class planification extends AppCompatActivity {
                                     String duration = routineSnapshot.child("duration").getValue(String.class);
                                     String exercisesString = routineSnapshot.child("exercises").getValue(String.class);
                                     List<String> exercises = Arrays.asList(exercisesString.split(","));
-                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(planification.this, android.R.layout.simple_list_item_1, exercises);
+                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Planification.this, android.R.layout.simple_list_item_1, exercises);
                                     planificationExercises.setAdapter(adapter);
                                     planificationDuration.setText(duration);
                                 }

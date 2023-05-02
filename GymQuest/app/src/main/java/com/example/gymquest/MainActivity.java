@@ -26,9 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button logoutButton, planificationButton;
     private ImageView userProfile;
 
-    // new comment
-    // alex comment
-
     String currentUserEmail;
 
     @SuppressLint("MissingInflatedId")
@@ -82,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         planificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, planification.class));
+                startActivity(new Intent(MainActivity.this, Planification.class));
             }
         });
 
