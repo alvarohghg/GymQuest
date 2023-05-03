@@ -7,6 +7,18 @@
     android:background="@drawable/login_background">
 
     <Button
+        android:id="@+id/mainExercisesButton"
+        android:layout_width="189dp"
+        android:layout_height="101dp"
+        android:text="Exercises"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.521" />
+
+    <Button
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,14 +51,15 @@
 
     <Button
         android:id="@+id/mainPlanification"
-        android:layout_width="172dp"
-        android:layout_height="111dp"
+        android:layout_width="190dp"
+        android:layout_height="99dp"
         android:text="My planification"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintVertical_bias="0.311" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
