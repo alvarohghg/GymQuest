@@ -2,19 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <ImageView
         android:id="@+id/exercise_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"/>
+
 
     <TextView
         android:id="@+id/exercise_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@color/purple_200"
+        android:textSize="20sp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
 </LinearLayout>

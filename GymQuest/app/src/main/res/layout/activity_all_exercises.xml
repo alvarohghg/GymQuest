@@ -26,13 +26,17 @@
 
     <GridView
         android:id="@+id/exercisesGridView"
-        android:layout_width="334dp"
-        android:layout_height="342dp"
+        android:layout_width="349dp"
+        android:layout_height="475dp"
+        android:columnWidth="100dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:paddingTop="10dp"
+        android:verticalSpacing="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.457" />
+        app:layout_constraintVertical_bias="0.554" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

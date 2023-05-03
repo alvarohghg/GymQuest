@@ -6,16 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,14 +25,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AllExercises extends AppCompatActivity {
@@ -66,10 +62,21 @@ public class AllExercises extends AppCompatActivity {
             }
         });
 
-
-
-
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the text of the selected exercise
+                String selectedExerciseName = ((TextView) view.findViewById(R.id.exercise_name)).getText().toString();
+                //Toast.makeText(AllExercises.this, "Selected exercise: " + selectedExerciseName, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AllExercises.this, ExerciseDisplay.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("selectedExerciseName", selectedExerciseName);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
+
     class ExerciseAdapter extends BaseAdapter {
         private Context context;
         private List<String> exercises;
