@@ -157,7 +157,7 @@ public class Planification extends AppCompatActivity {
                                 }
 
                                 if (!found) {
-                                    // The routine was not found in the "routines" collection, try to find it in "user-routines"
+                                    // The routine was not found in the "routines" collection, try to find it in "user-routine"
                                     DatabaseReference userRoutinesRef = FirebaseDatabase.getInstance().getReference().child("user-routine");
                                     Query userRoutineQuery = userRoutinesRef.orderByChild("email").equalTo(currentUserEmail);
                                     userRoutineQuery.addListenerForSingleValueEvent(new ValueEventListener() {
