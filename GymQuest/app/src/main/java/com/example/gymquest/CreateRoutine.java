@@ -103,7 +103,7 @@ public class CreateRoutine extends AppCompatActivity {
 
                 String userRoutineString = "";
                 for (Exercise exercise : userRoutineList) {
-                    userRoutineString += exercise.getName() + ", ";
+                    userRoutineString += exercise.getName() + ",";
                 }
                 // erase last coma and any space
                 if (!userRoutineList.isEmpty()) {
