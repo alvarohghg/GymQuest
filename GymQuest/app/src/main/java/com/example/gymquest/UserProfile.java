@@ -42,7 +42,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         userID=user.getUid();
         final TextView settingsName=(TextView) findViewById(R.id.settingsName);
         final TextView settingsHeight=(TextView) findViewById(R.id.settingsHeight);
-        final TextView settingsEmail=(TextView) findViewById(R.id.settingsKg);
+        final TextView settingsEmail=(TextView) findViewById(R.id.settingsEmail);
         final TextView settingsKg=(TextView) findViewById(R.id.settingsKg);
         final TextView settingsKcal=(TextView) findViewById(R.id.settingsKcal);
 
