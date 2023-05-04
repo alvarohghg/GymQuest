@@ -18,7 +18,7 @@
         android:textColor="@color/white"
         android:gravity="center"
         android:background="@color/purple_200"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
