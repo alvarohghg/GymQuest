@@ -185,7 +185,19 @@ public class editRoutine extends AppCompatActivity {
             }
         });
 
+        myRoutines.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected routine title from the ArrayAdapter
+                String selectedRoutine =parent.getItemAtPosition(position).toString();
+                //Toast.makeText(editRoutine.this, "Selected routine: " + selectedRoutine, Toast.LENGTH_SHORT).show();
 
+                updateRoutineForDay(day, selectedRoutine);
+
+
+
+            }
+        });
         editRoutineList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

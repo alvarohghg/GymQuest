@@ -145,13 +145,43 @@ public class Planification extends AppCompatActivity {
                         routineQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                boolean found = false;
                                 for (DataSnapshot routineSnapshot : dataSnapshot.getChildren()) {
+                                    found = true;
                                     String duration = routineSnapshot.child("duration").getValue(String.class);
                                     String exercisesString = routineSnapshot.child("exercises").getValue(String.class);
                                     List<String> exercises = Arrays.asList(exercisesString.split(","));
                                     ArrayAdapter<String> adapter = new ArrayAdapter<>(Planification.this, android.R.layout.simple_list_item_1, exercises);
                                     planificationExercises.setAdapter(adapter);
                                     planificationDuration.setText(duration);
+                                }
+
+                                if (!found) {
+                                    // The routine was not found in the "routines" collection, try to find it in "user-routines"
+                                    DatabaseReference userRoutinesRef = FirebaseDatabase.getInstance().getReference().child("user-routine");
+                                    Query userRoutineQuery = userRoutinesRef.orderByChild("email").equalTo(currentUserEmail);
+                                    userRoutineQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                            for (DataSnapshot userRoutineSnapshot : dataSnapshot.getChildren()) {
+                                                String routineName = userRoutineSnapshot.child("title").getValue(String.class);
+                                                if (routineName.equals(currentRoutine)) {
+                                                    String duration = userRoutineSnapshot.child("duration").getValue(String.class);
+                                                    String exercisesString = userRoutineSnapshot.child("exercises").getValue(String.class);
+                                                    List<String> exercises = Arrays.asList(exercisesString.split(","));
+                                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Planification.this, android.R.layout.simple_list_item_1, exercises);
+                                                    planificationExercises.setAdapter(adapter);
+                                                    planificationDuration.setText(duration);
+                                                    break;
+                                                }
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            Log.e(TAG, "Error retrieving user-routines: " + databaseError.getMessage());
+                                        }
+                                    });
                                 }
                             }
 
@@ -171,5 +201,6 @@ public class Planification extends AppCompatActivity {
             }
         });
     }
+
 
 }
