@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseListOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -41,8 +44,9 @@ public class editRoutine extends AppCompatActivity {
     private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,
     createRoutine;
     private TextView editRoutineCurrentRoutine;
-    private ListView editRoutineList;
+    private ListView editRoutineList, myRoutines;
     String day="";
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,12 +61,39 @@ public class editRoutine extends AppCompatActivity {
         editRoutineCurrentRoutine=(TextView)findViewById(R.id.editRoutineCurrentRoutine);
         editRoutineList=(ListView)findViewById(R.id.editRoutineList);
         createRoutine=(Button)findViewById(R.id.editRoutineCreateRoutine);
+        myRoutines=(ListView) findViewById(R.id.editRoutineMyRoutines);
+        String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+
+        //show my routines available
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRoutineRef = database.getReference("user-routine");
+        Query query = userRoutineRef.orderByChild("email").equalTo(userEmail);
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<String> myroutineTitles = new ArrayList<>(); // Create a list to store routine titles
+
+                for (DataSnapshot routineSnapshot : snapshot.getChildren()) { // Iterate over each routine snapshot in the data snapshot
+                    String name = routineSnapshot.child("title").getValue(String.class); // Get the value of the "name" field
+                    myroutineTitles.add(name); // Add the title to the list of routine titles
+                }
+
+                // Create a ListView adapter with the list of routine titles
+                ArrayAdapter<String> myRoutinesAdapter = new ArrayAdapter<>(editRoutine.this, android.R.layout.simple_list_item_1, myroutineTitles);
+                myRoutines.setAdapter(myRoutinesAdapter); // Set the adapter to your ListView
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "Error retrieving routines: " + error.getMessage());
+            }
+        });
 
 
         //show all the routines available
         DatabaseReference routinesRef = FirebaseDatabase.getInstance().getReference().child("routines");
-
-
         routinesRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -217,6 +248,7 @@ public class editRoutine extends AppCompatActivity {
             }
         });
     }
+
 
 
 
