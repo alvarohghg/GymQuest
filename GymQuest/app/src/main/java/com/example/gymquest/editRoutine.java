@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,7 +38,8 @@ import com.google.firebase.database.Query;
 
 
 public class editRoutine extends AppCompatActivity {
-    private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday;
+    private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,
+    createRoutine;
     private TextView editRoutineCurrentRoutine;
     private ListView editRoutineList;
     String day="";
@@ -54,6 +56,7 @@ public class editRoutine extends AppCompatActivity {
         Sunday=(Button)findViewById(R.id.editRoutineSunday);
         editRoutineCurrentRoutine=(TextView)findViewById(R.id.editRoutineCurrentRoutine);
         editRoutineList=(ListView)findViewById(R.id.editRoutineList);
+        createRoutine=(Button)findViewById(R.id.editRoutineCreateRoutine);
 
 
         //show all the routines available
@@ -83,7 +86,13 @@ public class editRoutine extends AppCompatActivity {
             }
         });
 
+        createRoutine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(editRoutine.this, CreateRoutine.class));
 
+            }
+        });
 
 
 

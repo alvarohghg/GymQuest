@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button logoutButton, planificationButton,exercisesButton;
+    private Button logoutButton, planificationButton,exercisesButton,createRoutine;
     private ImageView userProfile;
 
     String currentUserEmail;
@@ -87,6 +87,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, AllExercises.class));
+            }
+        });
+        createRoutine=(Button)findViewById(R.id.mainCreateRoutine);
+        createRoutine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CreateRoutine.class));
             }
         });
 

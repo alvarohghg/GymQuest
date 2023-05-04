@@ -7,6 +7,18 @@
     android:background="@drawable/login_background">
 
     <Button
+        android:id="@+id/mainCreateRoutine"
+        android:layout_width="189dp"
+        android:layout_height="101dp"
+        android:text="Create Routine"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <Button
         android:id="@+id/mainExercisesButton"
         android:layout_width="189dp"
         android:layout_height="101dp"
