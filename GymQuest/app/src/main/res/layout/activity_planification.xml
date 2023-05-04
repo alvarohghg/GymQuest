@@ -113,7 +113,7 @@
 
     <TextView
         android:id="@+id/planificationRoutine"
-        android:layout_width="135dp"
+        android:layout_width="313dp"
         android:layout_height="32dp"
         android:fontFamily="sans-serif-black"
         android:outlineProvider="none"
@@ -123,7 +123,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.121" />

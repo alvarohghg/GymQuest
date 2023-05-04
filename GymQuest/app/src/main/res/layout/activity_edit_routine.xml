@@ -141,19 +141,6 @@
         app:layout_constraintVertical_bias="0.482" />
 
     <TextView
-        android:id="@+id/editRoutineCurrentRoutine"
-        android:layout_width="140dp"
-        android:layout_height="35dp"
-        android:text="currentRoutine"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.819"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
-
-    <TextView
         android:id="@+id/durationText"
         android:layout_width="174dp"
         android:layout_height="33dp"
@@ -162,10 +149,23 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.127" />
+
+    <TextView
+        android:id="@+id/editRoutineCurrentRoutine"
+        android:layout_width="205dp"
+        android:layout_height="37dp"
+        android:text="currentRoutine"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127" />
 
     <TextView
         android:id="@+id/planificationBanner2"
