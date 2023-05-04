@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="First Name"
+        android:hint="Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="#252525"
@@ -38,12 +38,12 @@
         app:layout_constraintVertical_bias="0.306" />
 
     <EditText
-        android:id="@+id/editSurname"
+        android:id="@+id/editHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Surname"
-        android:inputType="textPersonName"
+        android:hint="Height"
+        android:inputType="number"
         android:minHeight="48dp"
         android:textColor="#252525"
         android:textColorHint="#263238"
@@ -55,12 +55,12 @@
         app:layout_constraintVertical_bias="0.39" />
 
     <EditText
-        android:id="@+id/editBirth"
+        android:id="@+id/editTarget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Date of Birth"
-        android:inputType="date"
+        android:hint="Target"
+        android:inputType="number"
         android:minHeight="48dp"
         android:textColor="#252525"
         android:textColorHint="#263238"
@@ -69,7 +69,24 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.545" />
+
+    <EditText
+        android:id="@+id/editWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Weight"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColor="#252525"
+        android:textColorHint="#263238"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.468" />
 
     <Button
         android:id="@+id/editSubmitChanges"

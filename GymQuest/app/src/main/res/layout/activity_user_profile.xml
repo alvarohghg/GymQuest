@@ -9,13 +9,14 @@
     tools:context=".UserProfile">
 
     <TextView
-        android:id="@+id/settingsName7"
+        android:id="@+id/settingsTargetBanner"
         android:layout_width="111dp"
         android:layout_height="31dp"
         android:text="Target"
-        android:textColor="#0E535C"
+        android:textColor="#252525"
         android:textColorHint="#0E535C"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.17"
@@ -28,7 +29,7 @@
         android:layout_width="300dp"
         android:layout_height="28dp"
         android:text="Kcal"
-        android:textColor="#424242"
+        android:textColor="#5A5959"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +43,7 @@
         android:layout_width="300dp"
         android:layout_height="28dp"
         android:text="Height"
-        android:textColor="#424242"
+        android:textColor="#5A5959"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,13 +53,14 @@
         app:layout_constraintVertical_bias="0.53" />
 
     <TextView
-        android:id="@+id/settingsName5"
+        android:id="@+id/settingsWeightBanner"
         android:layout_width="111dp"
         android:layout_height="31dp"
-        android:text="Weight:"
-        android:textColor="#0E535C"
+        android:text="Weight"
+        android:textColor="#252525"
         android:textColorHint="#0E535C"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.17"
@@ -71,7 +73,7 @@
         android:layout_width="300dp"
         android:layout_height="28dp"
         android:text="Weight"
-        android:textColor="#424242"
+        android:textColor="#5A5959"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,13 +83,14 @@
         app:layout_constraintVertical_bias="0.749" />
 
     <TextView
-        android:id="@+id/settingsHeight324"
+        android:id="@+id/settingsHeightBanner"
         android:layout_width="111dp"
         android:layout_height="31dp"
-        android:text="Height:"
-        android:textColor="#0E535C"
+        android:text="Height"
+        android:textColor="#252525"
         android:textColorHint="#0E535C"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.17"
@@ -119,7 +122,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.278" />
@@ -133,16 +136,16 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.407" />
 
     <TextView
-        android:id="@+id/settingsName3"
+        android:id="@+id/settingsNameBanner"
         android:layout_width="111dp"
         android:layout_height="31dp"
-        android:text="Name:"
+        android:text="Name"
         android:textColor="#252525"
         android:textColorHint="#5A5959"
         android:textSize="20sp"
@@ -155,7 +158,7 @@
         app:layout_constraintVertical_bias="0.232" />
 
     <TextView
-        android:id="@+id/settingsName6"
+        android:id="@+id/settingsEmailBanner"
         android:layout_width="111dp"
         android:layout_height="31dp"
         android:text="Email:"

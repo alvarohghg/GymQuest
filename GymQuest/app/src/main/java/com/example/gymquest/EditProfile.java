@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.gymquest.UserProfile;
-import com.example.gymquest.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -21,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class EditProfile extends AppCompatActivity implements View.OnClickListener{
     private ImageView backButton;
     private Button submit;
-    private EditText newName, newSurname, newBirth;
+    private EditText newName, newHeight, newWeight,newTarget;
     private static final String TAG = "MyActivity";
 
 
@@ -37,8 +35,9 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         submit.setOnClickListener(this);
 
         newName = (EditText) findViewById(R.id.editFirstName);
-        newSurname = (EditText) findViewById(R.id.editSurname);
-        newBirth = (EditText) findViewById(R.id.editBirth);
+        newHeight = (EditText) findViewById(R.id.editHeight);
+        newWeight = (EditText) findViewById(R.id.editWeight);
+        newTarget= (EditText) findViewById(R.id.editTarget);
 
     }
 
@@ -58,38 +57,47 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
 
     private void changeUser() {
         String Name = newName.getText().toString().trim();
-        String Surname = newSurname.getText().toString().trim();
-        String Birth = newBirth.getText().toString().trim();
+        String Height = newHeight.getText().toString().trim();
+        String Weight = newWeight.getText().toString().trim();
+        String Target = newTarget.getText().toString().trim();
 
-        if( Name.isEmpty() || Name.matches("First Name")){
+        if( Name.isEmpty() || Name.matches("Name")){
             newName.setError("Name is required!");
             newName.requestFocus();
             return;
         }
 
-        if( Surname.isEmpty() || Surname.matches("Surname")) {
-            newSurname.setError("Surname is required!");
-            newSurname.requestFocus();
+        if( Height.isEmpty() || Height.matches("Height")) {
+            newHeight.setError("Height is required!");
+            newHeight.requestFocus();
+            return;
+        }
+        if( Weight.isEmpty() || Weight.matches("Weight")) {
+            newWeight.setError("Weight is required!");
+            newWeight.requestFocus();
+            return;
+        }
+        if( Target.isEmpty() || Target.matches("Target")) {
+            newTarget.setError("Target is required!");
+            newTarget.requestFocus();
             return;
         }
 
-        if( Birth.isEmpty()) {
-            newBirth.setError("Birth is required!");
-            newBirth.requestFocus();
-            return;
-        }
 
         //manage edit data
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
         String uid = user.getUid();
-        DatabaseReference refName = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("name");
-        DatabaseReference refSurname = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("surname");
-        DatabaseReference refBirth = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("birth");
+        DatabaseReference refName = FirebaseDatabase.getInstance().getReference("users").child(uid).child("name");
+        DatabaseReference refHeight = FirebaseDatabase.getInstance().getReference("users").child(uid).child("height");
+        DatabaseReference refTarget = FirebaseDatabase.getInstance().getReference("users").child(uid).child("kcal");
+        DatabaseReference refWeight = FirebaseDatabase.getInstance().getReference("users").child(uid).child("kg");
 
         refName.setValue(Name);
-        refSurname.setValue(Surname);
-        refBirth.setValue(Birth);
+        refHeight.setValue(Height);
+        refTarget.setValue(Target);
+        refWeight.setValue(Weight);
+
 
         Toast.makeText(EditProfile.this,"Profile updated!",Toast.LENGTH_LONG ).show();
 
