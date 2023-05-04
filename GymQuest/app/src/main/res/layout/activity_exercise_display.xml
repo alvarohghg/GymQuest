@@ -27,17 +27,17 @@
 
     <TextView
         android:id="@+id/exerciseGroup"
-        android:layout_width="134dp"
-        android:layout_height="30dp"
+        android:layout_width="375dp"
+        android:layout_height="26dp"
         android:text="exerciseGroup"
         android:textAlignment="textStart"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.187" />
 
     <TextView
         android:id="@+id/planificationRoutine5"
@@ -121,14 +121,15 @@
         android:id="@+id/exerciseDescription"
         android:layout_width="362dp"
         android:layout_height="337dp"
+
         android:text="exerciseDescription"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.801" />
+        app:layout_constraintVertical_bias="0.773" />
 
     <TextView
         android:id="@+id/planificationRoutine2"
