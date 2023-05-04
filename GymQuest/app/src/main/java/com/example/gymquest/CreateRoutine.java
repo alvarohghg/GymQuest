@@ -79,11 +79,11 @@ public class CreateRoutine extends AppCompatActivity {
         });
 
 
-        // Adaptador para el ListView de la rutina del usuario
+        // Adapter for the ListView of the routine's user
         userRoutineList = new ArrayList<>();
         userRoutineAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, userRoutineList);
         userRoutineListView.setAdapter(userRoutineAdapter);
-        // Configura el OnItemClickListener para el ListView de los ejercicios
+        //Set up the OnItemClickListener for the ListView of all exercises
         allExercises.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -105,14 +105,14 @@ public class CreateRoutine extends AppCompatActivity {
                 for (Exercise exercise : userRoutineList) {
                     userRoutineString += exercise.getName() + ", ";
                 }
-                // Eliminar la última coma y espacio sobrantes
+                // erase last coma and any space
                 if (!userRoutineList.isEmpty()) {
                     userRoutineString = userRoutineString.substring(0, userRoutineString.length() - 2);
                 }
 
 
                 if (routineTitle.isEmpty() || routineDuration.isEmpty()) {
-                    Toast.makeText(CreateRoutine.this, "Por favor ingresa un título y una duración", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateRoutine.this, "Please insert a title and duration", Toast.LENGTH_SHORT).show();
                 } else {
                     UserRoutine routine = new UserRoutine( routineTitle, routineDuration,userRoutineString,userEmail);
                     mDatabase.child("user-routine").push().setValue(routine)
@@ -120,9 +120,9 @@ public class CreateRoutine extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(CreateRoutine.this, "Rutina guardada exitosamente", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(CreateRoutine.this, "Routine successfully created", Toast.LENGTH_SHORT).show();
                                     } else {
-                                        Toast.makeText(CreateRoutine.this, "Error al guardar la rutina", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(CreateRoutine.this, "Error creating the routine", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
