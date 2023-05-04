@@ -9,6 +9,37 @@
     tools:context=".ExerciseDisplay">
 
     <TextView
+        android:id="@+id/planificationRoutine3"
+        android:layout_width="135dp"
+        android:layout_height="32dp"
+        android:fontFamily="sans-serif-black"
+        android:outlineProvider="none"
+        android:text="Group"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <TextView
+        android:id="@+id/exerciseGroup"
+        android:layout_width="134dp"
+        android:layout_height="30dp"
+        android:text="exerciseGroup"
+        android:textAlignment="textStart"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <TextView
         android:id="@+id/planificationRoutine5"
         android:layout_width="135dp"
         android:layout_height="32dp"
@@ -23,21 +54,7 @@
         app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421" />
-
-    <TextView
-        android:id="@+id/exerciseSets"
-        android:layout_width="134dp"
-        android:layout_height="30dp"
-        android:text="exerciseSets"
-        android:textAlignment="textStart"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.848"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
+        app:layout_constraintVertical_bias="0.251" />
 
     <TextView
         android:id="@+id/exerciseReps"
@@ -51,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473" />
+        app:layout_constraintVertical_bias="0.305" />
 
     <TextView
         android:id="@+id/planificationRoutine4"
@@ -68,55 +85,21 @@
         app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.251" />
 
     <TextView
-        android:id="@+id/planificationRoutine3"
-        android:layout_width="135dp"
-        android:layout_height="32dp"
-        android:fontFamily="sans-serif-black"
-        android:outlineProvider="none"
-        android:text="Group"
-        android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.309" />
-
-    <TextView
-        android:id="@+id/exerciseGroup"
+        android:id="@+id/exerciseSets"
         android:layout_width="134dp"
         android:layout_height="30dp"
-        android:text="exerciseGroup"
+        android:text="exerciseSets"
         android:textAlignment="textStart"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.848"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.36" />
-
-    <TextView
-        android:id="@+id/planificationRoutine2"
-        android:layout_width="135dp"
-        android:layout_height="32dp"
-        android:fontFamily="sans-serif-black"
-        android:outlineProvider="none"
-        android:text="Description"
-        android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintVertical_bias="0.305" />
 
     <TextView
         android:id="@+id/exerciseName"
@@ -136,13 +119,31 @@
 
     <TextView
         android:id="@+id/exerciseDescription"
-        android:layout_width="365dp"
-        android:layout_height="55dp"
+        android:layout_width="362dp"
+        android:layout_height="337dp"
         android:text="exerciseDescription"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.801" />
+
+    <TextView
+        android:id="@+id/planificationRoutine2"
+        android:layout_width="135dp"
+        android:layout_height="32dp"
+        android:fontFamily="sans-serif-black"
+        android:outlineProvider="none"
+        android:text="Description"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.397" />
 </androidx.constraintlayout.widget.ConstraintLayout>
