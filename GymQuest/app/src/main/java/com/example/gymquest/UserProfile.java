@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +27,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class UserProfile extends AppCompatActivity implements View.OnClickListener{
 
+    // Bottom menu
+    private BottomNavigationListener bottomNavigationListener;
+
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
@@ -36,6 +40,13 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+        // Initialize bottom navigation view
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
+
+        // Set bottom navigation listener
+        bottomNavigationListener = new BottomNavigationListener(this);
+        bottomNavigationView.setOnItemSelectedListener(bottomNavigationListener);
 
         user= FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("users");

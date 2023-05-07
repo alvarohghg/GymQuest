@@ -7,37 +7,61 @@
     android:background="@drawable/login_background"
     tools:context=".AllExercises">
 
-    <TextView
-        android:id="@+id/exerciseBanner"
-        android:layout_width="wrap_content"
-        android:layout_height="43dp"
-        android:fontFamily="sans-serif-black"
-        android:outlineProvider="none"
-        android:text="Exercise section"
-        android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <GridView
-        android:id="@+id/exercisesGridView"
-        android:layout_width="370dp"
-        android:layout_height="565dp"
-        android:columnWidth="100dp"
-        android:ellipsize="end"
-        android:horizontalSpacing="10dp"
-        android:maxLines="2"
-        android:numColumns="3"
-        android:paddingTop="10dp"
-        android:verticalSpacing="10dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/exerciseBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="43dp"
+                android:fontFamily="sans-serif-black"
+                android:outlineProvider="none"
+                android:text="Exercise section"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" />
+
+            <GridView
+                android:id="@+id/exercisesGridView"
+                android:layout_width="370dp"
+                android:layout_height="565dp"
+                android:columnWidth="100dp"
+                android:ellipsize="end"
+                android:horizontalSpacing="10dp"
+                android:maxLines="2"
+                android:numColumns="3"
+                android:paddingTop="10dp"
+                android:verticalSpacing="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:itemBackground="@color/bottom_navigation_item_background"
+        app:itemIconSize="34dp"
+        app:labelVisibilityMode="unlabeled"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:menu="@menu/bottom_navigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

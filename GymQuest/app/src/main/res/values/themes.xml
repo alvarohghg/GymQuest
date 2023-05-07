@@ -11,7 +11,10 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+        <!-- remove activity switch animation effect -->
+        <item name="android:windowAnimationStyle">@null</item>
+
     </style>
 
     <style name="Theme.Alejandro_Luna.NoActionBar">

@@ -8,201 +8,156 @@
     android:background="@drawable/login_background"
     tools:context=".UserProfile">
 
-    <TextView
-        android:id="@+id/settingsTargetBanner"
-        android:layout_width="111dp"
-        android:layout_height="31dp"
-        android:text="Target"
-        android:textColor="#252525"
-        android:textColorHint="#0E535C"
-        android:textSize="20sp"
-        android:textStyle="bold"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.598" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/settingsKcal"
-        android:layout_width="300dp"
-        android:layout_height="28dp"
-        android:text="Kcal"
-        android:textColor="#5A5959"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.711"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.645" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/settingsHeight"
-        android:layout_width="300dp"
-        android:layout_height="28dp"
-        android:text="Height"
-        android:textColor="#5A5959"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.711"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+            <TextView
+                android:id="@+id/settingsTargetBanner"
+                android:layout_width="111dp"
+                android:layout_height="31dp"
+                android:text="Target"
+                android:textColor="#252525"
+                android:textColorHint="#0E535C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/settingsWeightBanner"
-        android:layout_width="111dp"
-        android:layout_height="31dp"
-        android:text="Weight"
-        android:textColor="#252525"
-        android:textColorHint="#0E535C"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703" />
+            <TextView
+                android:id="@+id/settingsKcal"
+                android:layout_width="300dp"
+                android:layout_height="28dp"
+                android:text="Kcal"
+                android:textColor="#5A5959"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/settingsKg"
-        android:layout_width="300dp"
-        android:layout_height="28dp"
-        android:text="Weight"
-        android:textColor="#5A5959"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.711"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.749" />
+            <TextView
+                android:id="@+id/settingsHeight"
+                android:layout_width="300dp"
+                android:layout_height="28dp"
+                android:text="Height"
+                android:textColor="#5A5959"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/settingsHeightBanner"
-        android:layout_width="111dp"
-        android:layout_height="31dp"
-        android:text="Height"
-        android:textColor="#252525"
-        android:textColorHint="#0E535C"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+            <TextView
+                android:id="@+id/settingsWeightBanner"
+                android:layout_width="111dp"
+                android:layout_height="31dp"
+                android:text="Weight"
+                android:textColor="#252525"
+                android:textColorHint="#0E535C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/editBackButton1"
-        android:layout_width="54dp"
-        android:layout_height="45dp"
-        android:clickable="true"
-        android:longClickable="false"
-        android:onClick="onClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+            <TextView
+                android:id="@+id/settingsKg"
+                android:layout_width="300dp"
+                android:layout_height="28dp"
+                android:text="Weight"
+                android:textColor="#5A5959"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/settingsName"
-        android:layout_width="300dp"
-        android:layout_height="28dp"
-        android:text="User name"
-        android:textColor="#5A5959"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.711"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278" />
+            <TextView
+                android:id="@+id/settingsHeightBanner"
+                android:layout_width="111dp"
+                android:layout_height="31dp"
+                android:text="Height"
+                android:textColor="#252525"
+                android:textColorHint="#0E535C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/settingsEmail"
-        android:layout_width="300dp"
-        android:layout_height="28dp"
-        android:text="Email"
-        android:textColor="#5A5959"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.711"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407" />
+            <ImageView
+                android:id="@+id/editBackButton1"
+                android:layout_width="54dp"
+                android:layout_height="45dp"
+                android:clickable="true"
+                android:longClickable="false"
+                android:onClick="onClick"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <TextView
-        android:id="@+id/settingsNameBanner"
-        android:layout_width="111dp"
-        android:layout_height="31dp"
-        android:text="Name"
-        android:textColor="#252525"
-        android:textColorHint="#5A5959"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.232" />
+            <TextView
+                android:id="@+id/settingsName"
+                android:layout_width="300dp"
+                android:layout_height="28dp"
+                android:text="User name"
+                android:textColor="#5A5959"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/settingsEmailBanner"
-        android:layout_width="111dp"
-        android:layout_height="31dp"
-        android:text="Email:"
-        android:textColor="#252525"
-        android:textColorHint="#5A5959"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.361" />
+            <TextView
+                android:id="@+id/settingsEmail"
+                android:layout_width="300dp"
+                android:layout_height="28dp"
+                android:text="Email"
+                android:textColor="#5A5959"
+                android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/editButton"
-        android:layout_width="150dp"
-        android:layout_height="71dp"
-        android:backgroundTint="#252525"
-        android:text="EDIT PROFILE"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="16.1sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+            <TextView
+                android:id="@+id/settingsNameBanner"
+                android:layout_width="111dp"
+                android:layout_height="31dp"
+                android:text="Name"
+                android:textColor="#252525"
+                android:textColorHint="#5A5959"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/homeButton"
-        android:layout_width="84dp"
-        android:layout_height="44dp"
-        android:clickable="true"
-        android:onClick="onClick"
+            <TextView
+                android:id="@+id/settingsEmailBanner"
+                android:layout_width="111dp"
+                android:layout_height="31dp"
+                android:text="Email:"
+                android:textColor="#252525"
+                android:textColorHint="#5A5959"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/editButton"
+                android:layout_width="150dp"
+                android:layout_height="71dp"
+                android:backgroundTint="#252525"
+                android:text="EDIT PROFILE"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16.1sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/homeButton"
+                android:layout_width="84dp"
+                android:layout_height="44dp"
+                android:clickable="true"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/home" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:itemBackground="@color/bottom_navigation_item_background"
+        app:itemIconSize="34dp"
+        app:labelVisibilityMode="unlabeled"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053"
-        app:srcCompat="@drawable/home" />
+        app:menu="@menu/bottom_navigation_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

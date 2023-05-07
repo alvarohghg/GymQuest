@@ -19,6 +19,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,12 +33,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AllExercises extends AppCompatActivity {
+
+    // Bottom menu
+    private BottomNavigationListener bottomNavigationListener;
+
     private GridView gridView;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_exercises);
+
+        // Initialize bottom navigation view
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
+
+        // Set bottom navigation listener
+        bottomNavigationListener = new BottomNavigationListener(this);
+        bottomNavigationView.setOnItemSelectedListener(bottomNavigationListener);
 
         gridView=findViewById(R.id.exercisesGridView);
 
