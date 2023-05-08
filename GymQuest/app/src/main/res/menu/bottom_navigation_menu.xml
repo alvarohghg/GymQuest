@@ -1,19 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_schedule"
-        android:icon="@drawable/calendar_with_squares"
+        android:icon="@drawable/menu1"
         android:title="Schedule" />
     <item
         android:id="@+id/menu_victory_hall"
-        android:icon="@drawable/prize_badge_with_star_and_ribbon"
+        android:icon="@drawable/menu2"
         android:title="Victory Hall" />
     <item
         android:id="@+id/menu_all_exercises"
-        android:icon="@drawable/weightlifting_silhouette_power_sport"
+        android:icon="@drawable/menu3"
         android:title="All Exercises" />
     <item
         android:id="@+id/menu_profile"
-        android:icon="@drawable/helmet"
+        android:icon="@drawable/menu4"
         android:title="Profile" />
 </menu>
 <!--    android:icon="@drawable/ic_user_profile"-->
