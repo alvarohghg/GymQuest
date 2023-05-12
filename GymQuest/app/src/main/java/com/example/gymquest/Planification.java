@@ -46,13 +46,13 @@ public class Planification extends AppCompatActivity {
         setContentView(R.layout.activity_planification);
 
 
-        // Initialize bottom navigation view
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
-        BottomNavigationListener navigationListener = BottomNavigationListener.getInstance(this, bottomNavigationView);
+        BottomNavigationListener navigationListener = new BottomNavigationListener(this, bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(navigationListener);
 
         // Call customizeMenuColors initially to set the default colors
         navigationListener.customizeMenuColors(R.id.menu_schedule);
+
 
         Monday=(Button) findViewById(R.id.planificationMonday);
         Tuesday=(Button)findViewById(R.id.planificationTuesday);

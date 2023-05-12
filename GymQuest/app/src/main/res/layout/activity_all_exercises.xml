@@ -58,7 +58,6 @@
         app:itemBackground="@color/bottom_navigation_item_background"
         app:itemIconSize="34dp"
         app:labelVisibilityMode="unlabeled"
-        app:itemIconTint="@color/bottom_navigation_item_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

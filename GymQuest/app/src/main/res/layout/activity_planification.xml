@@ -222,7 +222,6 @@
         android:layout_gravity="center"
         app:itemBackground="@color/bottom_navigation_item_background"
         app:itemIconSize="34dp"
-        app:itemIconTint="@color/bottom_navigation_item_icon"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -41,13 +41,13 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        // Initialize bottom navigation view
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
-        BottomNavigationListener navigationListener = BottomNavigationListener.getInstance(this, bottomNavigationView);
+        BottomNavigationListener navigationListener = new BottomNavigationListener(this, bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(navigationListener);
 
         // Call customizeMenuColors initially to set the default colors
         navigationListener.customizeMenuColors(R.id.menu_profile);
+
 
         user= FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("users");
