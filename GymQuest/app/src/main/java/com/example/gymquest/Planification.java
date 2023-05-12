@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,15 +33,27 @@ import java.util.List;
 import android.widget.AdapterView;
 
 public class Planification extends AppCompatActivity {
+
     private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday;
     private TextView planificationRoutine,planificationDuration;
     private ListView planificationExercises;
     private ImageView planificationEdit;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planification);
+
+
+        // Initialize bottom navigation view
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
+        BottomNavigationListener navigationListener = BottomNavigationListener.getInstance(this, bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(navigationListener);
+
+        // Call customizeMenuColors initially to set the default colors
+        navigationListener.customizeMenuColors(R.id.menu_schedule);
+
         Monday=(Button) findViewById(R.id.planificationMonday);
         Tuesday=(Button)findViewById(R.id.planificationTuesday);
         Wednesday=(Button)findViewById(R.id.planificationWednesday);

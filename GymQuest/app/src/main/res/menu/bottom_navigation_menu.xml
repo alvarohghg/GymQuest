@@ -16,4 +16,3 @@
         android:icon="@drawable/menu4"
         android:title="Profile" />
 </menu>
-<!--    android:icon="@drawable/ic_user_profile"-->

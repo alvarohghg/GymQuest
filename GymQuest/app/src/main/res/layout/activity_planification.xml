@@ -215,4 +215,18 @@
         app:layout_constraintVertical_bias="0.025"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:itemBackground="@color/bottom_navigation_item_background"
+        app:itemIconSize="34dp"
+        app:itemIconTint="@color/bottom_navigation_item_icon"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

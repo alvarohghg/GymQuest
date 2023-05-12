@@ -65,20 +65,4 @@
 
         </LinearLayout>
     </ScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_view"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        app:itemBackground="@color/bottom_navigation_item_background"
-        app:itemIconSize="34dp"
-        app:labelVisibilityMode="unlabeled"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,9 +25,6 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    // Bottom menu
-    private BottomNavigationListener bottomNavigationListener;
-
     private Button logoutButton, planificationButton,exercisesButton,createRoutine;
     private ImageView userProfile;
 
@@ -38,14 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        // Initialize bottom navigation view
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
-
-        // Set bottom navigation listener
-        bottomNavigationListener = new BottomNavigationListener(this);
-        bottomNavigationView.setOnItemSelectedListener(bottomNavigationListener);
 
         currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
 
