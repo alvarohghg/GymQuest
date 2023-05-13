@@ -164,7 +164,7 @@ public class Planification extends AppCompatActivity {
                                     String duration = routineSnapshot.child("duration").getValue(String.class);
                                     String exercisesString = routineSnapshot.child("exercises").getValue(String.class);
                                     List<String> exercises = Arrays.asList(exercisesString.split(","));
-                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Planification.this, android.R.layout.simple_list_item_1, exercises);
+                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Planification.this, R.layout.list_item_exercise, exercises);
                                     planificationExercises.setAdapter(adapter);
                                     planificationDuration.setText(duration);
                                 }
@@ -182,7 +182,7 @@ public class Planification extends AppCompatActivity {
                                                     String duration = userRoutineSnapshot.child("duration").getValue(String.class);
                                                     String exercisesString = userRoutineSnapshot.child("exercises").getValue(String.class);
                                                     List<String> exercises = Arrays.asList(exercisesString.split(","));
-                                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Planification.this, android.R.layout.simple_list_item_1, exercises);
+                                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Planification.this, R.layout.list_item_exercise, exercises);
                                                     planificationExercises.setAdapter(adapter);
                                                     planificationDuration.setText(duration);
                                                     break;

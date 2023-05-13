@@ -9,7 +9,11 @@
         android:id="@+id/nameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textColor="@color/text_p_color"
+        android:textColorHighlight="@color/text_p_color"
+        android:textColorHint="@color/text_p_color"
+        android:textColorLink="@color/text_p_color"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 </LinearLayout>

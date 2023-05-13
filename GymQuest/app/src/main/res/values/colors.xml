@@ -8,10 +8,21 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="text_main_color">#e5be95</color>
-    <color name="bottom_navigation_item_background">#15200a</color>
-    <color name="bottom_navigation_item_background_selected">#1c290f</color>
-    <color name="bottom_navigation_item_icon">#e5be95</color>
-    <color name="bottom_navigation_item_icon_selected">#aa5d39</color>
-    <color name="bottom_navigation_border">#aa5d39</color>
+    <color name="col_pallet_white">#ffffff</color>
+    <color name="col_pallet_green_1">#87a03d</color>
+    <color name="col_pallet_green_2">#4f9555</color>
+    <color name="col_pallet_yellow_1">#fdce9f</color>
+    <color name="col_pallet_yellow_2">#fdbc6b</color>
+    <color name="col_pallet_orange">#b66036</color>
+    <color name="col_pallet_dark_green_1">#1e2615</color>
+    <color name="col_pallet_dark_green_2">#192112</color>
+
+    <color name="text_h1_main_color">#fdbc6b</color>
+    <color name="text_p_color">#fecea4</color>
+
+    <color name="bottom_navigation_item_background">#192112</color>
+    <color name="bottom_navigation_item_background_selected">#1e2615</color>
+    <color name="bottom_navigation_item_icon">#fdbc6b</color>
+    <color name="bottom_navigation_item_icon_selected">#b66036</color>
+    <color name="bottom_navigation_border">#b66036</color>
 </resources>

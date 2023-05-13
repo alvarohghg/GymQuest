@@ -11,8 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,9 +19,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class UserProfile extends AppCompatActivity implements View.OnClickListener{
 
@@ -55,7 +50,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         final TextView settingsName=(TextView) findViewById(R.id.settingsName);
         final TextView settingsHeight=(TextView) findViewById(R.id.settingsHeight);
         final TextView settingsEmail=(TextView) findViewById(R.id.settingsEmail);
-        final TextView settingsKg=(TextView) findViewById(R.id.settingsKg);
+        final TextView settingsKg=(TextView) findViewById(R.id.settingsWeight);
         final TextView settingsKcal=(TextView) findViewById(R.id.settingsKcal);
 
         editButton=(Button) findViewById(R.id.editButton);
@@ -78,10 +73,10 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
                     String kg = userProfile.kg;
                     String kcal = userProfile.kcal;
                     settingsName.setText(name);
-                    settingsHeight.setText(height);
+                    settingsHeight.setText(height + " cm");
                     settingsEmail.setText(email);
-                    settingsKg.setText(kg);
-                    settingsKcal.setText(kcal);
+                    settingsKg.setText(kg + " kg");
+                    settingsKcal.setText(kcal + " kcal");
 
                 }
             }
