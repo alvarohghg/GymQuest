@@ -5,145 +5,214 @@
     android:id="@+id/mainBanner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:background="@drawable/bg_main_gradient"
     tools:context=".UserProfile">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="55dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <ImageView
+        android:id="@+id/editBackButton1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:longClickable="false"
+        android:onClick="onClick"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow" />
 
-        <LinearLayout
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profileimg_undefined" />
+
+    <TextView
+        android:id="@+id/settingsName"
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Your username"
+        android:textAlignment="center"
+        android:textColor="@color/text_main_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/settingsEmail"
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Your Email"
+        android:textAlignment="center"
+        android:textColor="@color/text_main_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsName" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsEmail">
+
+        <TextView
+            android:id="@+id/settingsHeightBanner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:text="Height:"
+            android:textAlignment="center"
+            android:textColor="@color/text_main_color"
+            android:textColorHint="#0E535C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
-            <TextView
-                android:id="@+id/settingsTargetBanner"
-                android:layout_width="111dp"
-                android:layout_height="31dp"
-                android:text="Target"
-                android:textColor="#252525"
-                android:textColorHint="#0E535C"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/settingsHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Height"
+            android:textAlignment="center"
+            android:textColor="@color/text_main_color"
+            android:textSize="20sp" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/settingsKcal"
-                android:layout_width="300dp"
-                android:layout_height="28dp"
-                android:text="Kcal"
-                android:textColor="#5A5959"
-                android:textSize="20sp" />
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-            <TextView
-                android:id="@+id/settingsHeight"
-                android:layout_width="300dp"
-                android:layout_height="28dp"
-                android:text="Height"
-                android:textColor="#5A5959"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/settingsWeightBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weight"
+            android:textAlignment="center"
+            android:textColor="@color/text_main_color"
+            android:textColorHint="#0E535C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
-            <TextView
-                android:id="@+id/settingsWeightBanner"
-                android:layout_width="111dp"
-                android:layout_height="31dp"
-                android:text="Weight"
-                android:textColor="#252525"
-                android:textColorHint="#0E535C"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/settingsKg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Weight"
+            android:textAlignment="center"
+            android:textColor="@color/text_main_color"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/settingsKg"
-                android:layout_width="300dp"
-                android:layout_height="28dp"
-                android:text="Weight"
-                android:textColor="#5A5959"
-                android:textSize="20sp" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/settingsHeightBanner"
-                android:layout_width="111dp"
-                android:layout_height="31dp"
-                android:text="Height"
-                android:textColor="#252525"
-                android:textColorHint="#0E535C"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-            <ImageView
-                android:id="@+id/editBackButton1"
-                android:layout_width="54dp"
-                android:layout_height="45dp"
-                android:clickable="true"
-                android:longClickable="false"
-                android:onClick="onClick"
-                app:srcCompat="?attr/actionModeCloseDrawable" />
+        <TextView
+            android:id="@+id/settingsTargetBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Target"
+            android:textAlignment="center"
+            android:textColor="@color/text_main_color"
+            android:textColorHint="#0E535C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
-            <TextView
-                android:id="@+id/settingsName"
-                android:layout_width="300dp"
-                android:layout_height="28dp"
-                android:text="User name"
-                android:textColor="#5A5959"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/settingsKcal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Kcal"
+            android:textAlignment="center"
+            android:textColor="@color/text_main_color"
+            android:textSize="20sp" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/settingsEmail"
-                android:layout_width="300dp"
-                android:layout_height="28dp"
-                android:text="Email"
-                android:textColor="#5A5959"
-                android:textSize="20sp" />
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="267dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#a95b35"
+        android:text="Edit Profile"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/settingsNameBanner"
-                android:layout_width="111dp"
-                android:layout_height="31dp"
-                android:text="Name"
-                android:textColor="#252525"
-                android:textColorHint="#5A5959"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/homeButton"
+        android:layout_width="84dp"
+        android:layout_height="44dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:visibility="gone"
+        app:srcCompat="@drawable/home"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="366dp" />
 
-            <TextView
-                android:id="@+id/settingsEmailBanner"
-                android:layout_width="111dp"
-                android:layout_height="31dp"
-                android:text="Email:"
-                android:textColor="#252525"
-                android:textColorHint="#5A5959"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+    <TextView
+        android:id="@+id/settingsEmailBanner"
+        android:layout_width="111dp"
+        android:layout_height="31dp"
+        android:text="Email:"
+        android:textColor="#252525"
+        android:textColorHint="#5A5959"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="182dp" />
 
-            <Button
-                android:id="@+id/editButton"
-                android:layout_width="150dp"
-                android:layout_height="71dp"
-                android:backgroundTint="#252525"
-                android:text="EDIT PROFILE"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="16.1sp"
-                android:textStyle="bold" />
+    <TextView
+        android:id="@+id/settingsNameBanner"
+        android:layout_width="111dp"
+        android:layout_height="31dp"
+        android:text="Name"
+        android:textColor="#252525"
+        android:textColorHint="#5A5959"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="210dp" />
 
-            <ImageView
-                android:id="@+id/homeButton"
-                android:layout_width="84dp"
-                android:layout_height="44dp"
-                android:clickable="true"
-                android:onClick="onClick"
-                app:srcCompat="@drawable/home" />
-        </LinearLayout>
-    </ScrollView>
+    <View
+        android:id="@+id/border"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bottom_navigation_border"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
@@ -156,7 +225,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu" />
+        app:menu="@menu/bottom_navigation_menu" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

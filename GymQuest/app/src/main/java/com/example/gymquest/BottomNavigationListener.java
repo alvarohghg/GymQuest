@@ -53,18 +53,13 @@ public class BottomNavigationListener implements BottomNavigationView.OnItemSele
     public void customizeMenuColors(int activeItemId) {
         int menuSize = bottomNavigationView.getMenu().size();
 
+        // Set icon color
         for (int i = 0; i < menuSize; i++) {
             MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
             boolean isActive = menuItem.getItemId() == activeItemId;
 
             View view = bottomNavigationView.findViewById(menuItem.getItemId());
 
-            // Set background color
-            int backgroundResId = isActive ? R.color.bottom_navigation_item_background_selected : R.color.bottom_navigation_item_background;
-            view.setBackgroundResource(backgroundResId);
-
-
-            // Set icon color
             Drawable iconDrawable = menuItem.getIcon();
 
             int iconColorResId = isActive ? R.color.bottom_navigation_item_icon_selected : R.color.bottom_navigation_item_icon;
@@ -73,9 +68,19 @@ public class BottomNavigationListener implements BottomNavigationView.OnItemSele
             iconDrawable.setColorFilter(iconColor, PorterDuff.Mode.SRC_IN);
             menuItem.setIcon(iconDrawable);
 
-
             // Set the updated view back to the menu item
             menuItem.setActionView(view);
+        }
+
+        // Set bg color
+        for (int i = 0; i < menuSize; i++) {
+            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
+            boolean isActive = menuItem.getItemId() == activeItemId;
+
+            View view = bottomNavigationView.findViewById(menuItem.getItemId());
+
+            int backgroundResId = isActive ? R.color.bottom_navigation_item_background_selected : R.color.bottom_navigation_item_background;
+            view.setBackgroundResource(backgroundResId);
         }
     }
 
