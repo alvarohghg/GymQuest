@@ -4,158 +4,259 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:background="@drawable/bg_main_gradient"
     tools:context=".editRoutine">
 
-    <Button
-        android:id="@+id/editRoutineTuesday"
-        android:layout_width="47dp"
-        android:layout_height="43dp"
-        android:background="@drawable/shape_rounded_rectangle"
-        android:text="T"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-
+    <ImageView
+        android:id="@+id/btnBackEditExercisePlan"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="onClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295" />
-
-    <Button
-        android:id="@+id/editRoutineMonday"
-        android:layout_width="47dp"
-        android:layout_height="43dp"
-        android:background="@drawable/shape_rounded_rectangle"
-        android:text="M"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.206" />
-
-    <Button
-        android:id="@+id/editRoutineWednesday"
-        android:layout_width="47dp"
-        android:layout_height="43dp"
-        android:background="@drawable/shape_rounded_rectangle"
-        android:text="W"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387" />
-
-    <Button
-        android:id="@+id/editRoutineFriday"
-        android:layout_width="47dp"
-        android:layout_height="43dp"
-        android:background="@drawable/shape_rounded_rectangle"
-        android:text="F"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574" />
-
-    <Button
-        android:id="@+id/editRoutineSaturday"
-        android:layout_width="47dp"
-        android:layout_height="43dp"
-        android:background="@drawable/shape_rounded_rectangle"
-        android:text="S"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
-
-    <Button
-        android:id="@+id/editRoutineSunday"
-        android:layout_width="47dp"
-        android:layout_height="43dp"
-        android:background="@drawable/shape_rounded_rectangle"
-        android:text="S"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748" />
-
-    <Button
-        android:id="@+id/editRoutineThursday"
-        android:layout_width="47dp"
-        android:layout_height="43dp"
-        android:background="@drawable/shape_rounded_rectangle"
-        android:text="T"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482" />
-
-    <TextView
-        android:id="@+id/durationText"
-        android:layout_width="174dp"
-        android:layout_height="33dp"
-        android:text="Selected routine:"
-        android:textAlignment="textStart"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
-
-    <TextView
-        android:id="@+id/editRoutineCurrentRoutine"
-        android:layout_width="205dp"
-        android:layout_height="37dp"
-        android:text="currentRoutine"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:srcCompat="@drawable/left_arrow" />
 
     <TextView
         android:id="@+id/planificationBanner2"
         android:layout_width="wrap_content"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-black"
         android:outlineProvider="none"
-        android:text="Edit Routine"
+        android:text="Edit Exercise Plan"
         android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/text_h1_main_color"
         android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/durationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif"
+        android:text="Selected Routine:"
+        android:textAlignment="textStart"
+        android:textColor="@color/text_p_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planificationBanner2" />
+
+    <TextView
+        android:id="@+id/editRoutineCurrentRoutine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif"
+        android:text="none"
+        android:textColor="@color/text_p_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/durationText" />
+
+    <TextView
+        android:id="@+id/editRoutineRoutinesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif"
+        android:outlineProvider="none"
+        android:text="Public Routines:"
+        android:textColor="@color/text_p_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/editRoutineCurrentRoutine" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardPublicRoutines"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <Button
+            android:id="@+id/editRoutineMonday"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/col_pallet_green_2"
+            android:elegantTextHeight="false"
+            android:text="Mon"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/col_pallet_white"
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/editRoutineTuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/col_pallet_green_2"
+            android:elegantTextHeight="false"
+            android:text="Tue"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/col_pallet_white"
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/editRoutineWednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/col_pallet_green_2"
+            android:elegantTextHeight="false"
+            android:text="Wed"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/col_pallet_white"
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/editRoutineThursday"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/col_pallet_green_2"
+            android:elegantTextHeight="false"
+            android:text="Thu"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/col_pallet_white"
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/editRoutineFriday"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/col_pallet_green_2"
+            android:elegantTextHeight="false"
+            android:text="Fri"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/col_pallet_white"
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/editRoutineSaturday"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/col_pallet_green_2"
+            android:elegantTextHeight="false"
+            android:text="Sat"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/col_pallet_white"
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/editRoutineSunday"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/col_pallet_green_2"
+            android:elegantTextHeight="false"
+            android:text="Sun"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/col_pallet_white"
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPublicRoutines"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/field_bg_overlay"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/editRoutineRoutinesText">
+
+        <ListView
+            android:id="@+id/editRoutineList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/editRoutineRoutinesText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif"
+        android:outlineProvider="none"
+        android:text="My routines:"
+        android:textAlignment="viewStart"
+        android:textColor="@color/text_p_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/cardPublicRoutines" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMyRoutines"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="@color/field_bg_overlay"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/editRoutineRoutinesText2">
+
+        <ListView
+            android:id="@+id/editRoutineMyRoutines"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp" />
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/editRoutineCreateRoutine"
@@ -163,67 +264,13 @@
         android:layout_height="62dp"
         android:text="Create routine"
         android:textSize="16sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
-
-    <ListView
-        android:id="@+id/editRoutineMyRoutines"
-        android:layout_width="232dp"
-        android:layout_height="176dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
-
-    <TextView
-        android:id="@+id/editRoutineRoutinesText2"
-        android:layout_width="140dp"
-        android:layout_height="35dp"
-        android:fontFamily="sans-serif-black"
-        android:outlineProvider="none"
-        android:text="My routines"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565" />
-
-    <ListView
-        android:id="@+id/editRoutineList"
-        android:layout_width="232dp"
-        android:layout_height="172dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351" />
-
-    <TextView
-        android:id="@+id/editRoutineRoutinesText"
-        android:layout_width="140dp"
-        android:layout_height="35dp"
-        android:fontFamily="sans-serif-black"
-        android:outlineProvider="none"
-        android:text="Routines"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.973"
+        tools:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

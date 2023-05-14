@@ -80,7 +80,7 @@ public class editRoutine extends AppCompatActivity {
                 }
 
                 // Create a ListView adapter with the list of routine titles
-                ArrayAdapter<String> myRoutinesAdapter = new ArrayAdapter<>(editRoutine.this, android.R.layout.simple_list_item_1, myroutineTitles);
+                ArrayAdapter<String> myRoutinesAdapter = new ArrayAdapter<>(editRoutine.this, R.layout.list_item_exercise, myroutineTitles);
                 myRoutines.setAdapter(myRoutinesAdapter); // Set the adapter to your ListView
 
             }
@@ -105,7 +105,7 @@ public class editRoutine extends AppCompatActivity {
                 }
 
                 // Create a ListView adapter with the list of routine titles
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(editRoutine.this, android.R.layout.simple_list_item_1, routineTitles);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(editRoutine.this, R.layout.list_item_exercise, routineTitles);
                 editRoutineList.setAdapter(adapter); // Set the adapter to your ListView
 
             }

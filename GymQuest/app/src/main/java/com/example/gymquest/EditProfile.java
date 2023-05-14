@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class EditProfile extends AppCompatActivity implements View.OnClickListener{
+
     private ImageView backButton;
     private Button submit;
     private EditText newName, newHeight, newWeight,newTarget;
