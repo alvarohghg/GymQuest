@@ -14,33 +14,22 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseListAdapter;
-import com.firebase.ui.database.FirebaseListOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import com.google.firebase.database.Query;
 
 
-public class editRoutine extends AppCompatActivity {
+public class EditRoutine extends AppCompatActivity {
     private Button Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,
     createRoutine;
     private TextView editRoutineCurrentRoutine;
@@ -80,7 +69,7 @@ public class editRoutine extends AppCompatActivity {
                 }
 
                 // Create a ListView adapter with the list of routine titles
-                ArrayAdapter<String> myRoutinesAdapter = new ArrayAdapter<>(editRoutine.this, R.layout.list_item_exercise, myroutineTitles);
+                ArrayAdapter<String> myRoutinesAdapter = new ArrayAdapter<>(EditRoutine.this, R.layout.list_item_exercise, myroutineTitles);
                 myRoutines.setAdapter(myRoutinesAdapter); // Set the adapter to your ListView
 
             }
@@ -105,7 +94,7 @@ public class editRoutine extends AppCompatActivity {
                 }
 
                 // Create a ListView adapter with the list of routine titles
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(editRoutine.this, R.layout.list_item_exercise, routineTitles);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(EditRoutine.this, R.layout.list_item_exercise, routineTitles);
                 editRoutineList.setAdapter(adapter); // Set the adapter to your ListView
 
             }
@@ -120,7 +109,7 @@ public class editRoutine extends AppCompatActivity {
         createRoutine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(editRoutine.this, CreateRoutine.class));
+                startActivity(new Intent(EditRoutine.this, CreateRoutine.class));
 
             }
         });

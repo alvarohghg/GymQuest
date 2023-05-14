@@ -1,18 +1,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_schedule"
+        android:id="@+id/menu1_exercise_schedule"
         android:icon="@drawable/menu1"
-        android:title="Schedule" />
+        android:title="Exercise Schedule" />
     <item
-        android:id="@+id/menu_victory_hall"
+        android:id="@+id/menu2_create_routine"
         android:icon="@drawable/menu2"
-        android:title="Victory Hall" />
+        android:title="Create Routines" />
     <item
-        android:id="@+id/menu_all_exercises"
+        android:id="@+id/menu3_all_exercises"
         android:icon="@drawable/menu3"
         android:title="All Exercises" />
     <item
-        android:id="@+id/menu_profile"
+        android:id="@+id/menu4_profile"
         android:icon="@drawable/menu4"
         android:title="Profile" />
 </menu>

@@ -24,10 +24,6 @@ import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    private Button logoutButton, planificationButton,exercisesButton,createRoutine;
-    private ImageView userProfile;
-
     String currentUserEmail;
 
     @SuppressLint("MissingInflatedId")
@@ -39,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
 
         // Create user-day collection and add document with user's email
-        //only for the first time
+        // only for the first time
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference userRef = database.getReference("user-day");
@@ -76,45 +72,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 
-
-        planificationButton=(Button)findViewById(R.id.mainPlanification);
-        planificationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Planification.class));
-            }
-        });
-        exercisesButton=(Button)findViewById(R.id.mainExercisesButton);
-        exercisesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AllExercises.class));
-            }
-        });
-        createRoutine=(Button)findViewById(R.id.mainCreateRoutine);
-        createRoutine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, CreateRoutine.class));
-            }
-        });
-
-        logoutButton=(Button) findViewById(R.id.signOut);
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this, Login.class));
-            }
-        });
-
-        userProfile=(ImageView)findViewById(R.id.userProfile);
-        userProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, UserProfile.class));
-            }
-        });
+        // Transition to Planification activity as thats what we want to show user
+        Intent intent = new Intent(MainActivity.this, Planification.class);
+        startActivity(intent);
     }
 
     @Override

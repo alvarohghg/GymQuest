@@ -42,14 +42,13 @@ public class AllExercises extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_exercises);
 
+        // Bottom main menu
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
         BottomNavigationListener navigationListener = new BottomNavigationListener(this, bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(navigationListener);
 
         // Call customizeMenuColors initially to set the default colors
-        navigationListener.customizeMenuColors(R.id.menu_all_exercises);
-
-
+        navigationListener.customizeMenuColors(R.id.menu3_all_exercises);
 
         gridView=findViewById(R.id.exercisesGridView);
 
@@ -60,6 +59,7 @@ public class AllExercises extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<String> exerciseNames = new ArrayList<>(); // Create a list outside of the loop
+                
                 for (DataSnapshot routineSnapshot : dataSnapshot.getChildren()) {
                     String exercise = routineSnapshot.child("name").getValue(String.class);
                     exerciseNames.add(exercise); // Add every name to the list

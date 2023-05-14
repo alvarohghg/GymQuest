@@ -131,18 +131,20 @@
         android:id="@+id/support"
         android:layout_width="51dp"
         android:layout_height="41dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.591"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/mail_support" />
 
     <TextView
         android:id="@+id/helpText"
         android:layout_width="80dp"
         android:layout_height="22dp"
+        android:layout_marginBottom="24dp"
         android:text="Need help?"
         android:textAlignment="center"
         android:textColor="@color/text_p_color"
@@ -152,7 +154,7 @@
         app:layout_constraintHorizontal_bias="0.392"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ProgressBar
         android:id="@+id/progressBar"

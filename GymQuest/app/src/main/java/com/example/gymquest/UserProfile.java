@@ -23,9 +23,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserProfile extends AppCompatActivity implements View.OnClickListener{
 
-    // Bottom menu
-    private BottomNavigationListener bottomNavigationListener;
-
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
@@ -37,13 +34,13 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
+        // Bottom main menu
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
         BottomNavigationListener navigationListener = new BottomNavigationListener(this, bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(navigationListener);
 
         // Call customizeMenuColors initially to set the default colors
-        navigationListener.customizeMenuColors(R.id.menu_profile);
-
+        navigationListener.customizeMenuColors(R.id.menu4_profile);
 
         user= FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("users");
@@ -67,6 +64,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
+
                 if(userProfile!=null){
                     String name = userProfile.name;
                     String height = userProfile.height;

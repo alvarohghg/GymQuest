@@ -25,21 +25,27 @@ public class BottomNavigationListener implements BottomNavigationView.OnItemSele
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
-        Log.d("Clicked Menu", "Menu item clicked: " + itemId);
+
         switch (itemId) {
-            case R.id.menu_schedule:
+            case R.id.menu1_exercise_schedule:
                 Intent planificationActivityIntent = new Intent(context, Planification.class);
                 planificationActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(planificationActivityIntent);
                 return false;
 
-            case R.id.menu_all_exercises:
+            case R.id.menu2_create_routine:
+                Intent createRoutineIntent = new Intent(context, CreateRoutine.class);
+                createRoutineIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(createRoutineIntent);
+                return true;
+
+            case R.id.menu3_all_exercises:
                 Intent allExercisesIntent = new Intent(context, AllExercises.class);
                 allExercisesIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(allExercisesIntent);
                 return true;
 
-            case R.id.menu_profile:
+            case R.id.menu4_profile:
                 Intent profileIntent = new Intent(context, UserProfile.class);
                 profileIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(profileIntent);
@@ -68,7 +74,7 @@ public class BottomNavigationListener implements BottomNavigationView.OnItemSele
             iconDrawable.setColorFilter(iconColor, PorterDuff.Mode.SRC_IN);
             menuItem.setIcon(iconDrawable);
 
-            // Set the updated view back to the menu item
+            // Set the updated view back to the menu item (important for icon otherwise dont work)
             menuItem.setActionView(view);
         }
 

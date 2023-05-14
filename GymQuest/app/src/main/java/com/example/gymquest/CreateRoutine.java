@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -39,6 +40,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CreateRoutine extends AppCompatActivity {
+
     private EditText title, duration;
     private ImageView save;
     private ListView allExercises,userRoutineListView;
@@ -51,6 +53,14 @@ public class CreateRoutine extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_routine);
+
+        // Bottom main menu
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
+        BottomNavigationListener navigationListener = new BottomNavigationListener(this, bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(navigationListener);
+
+        // Call customizeMenuColors initially to set the default colors
+        navigationListener.customizeMenuColors(R.id.menu2_create_routine);
 
         title=(EditText) findViewById(R.id.createRoutineTitle);
         duration=(EditText)findViewById(R.id.createRoutineDuration);
@@ -84,6 +94,7 @@ public class CreateRoutine extends AppCompatActivity {
         userRoutineList = new ArrayList<>();
         userRoutineAdapter = new ArrayAdapter<>(this, R.layout.list_item_exercise, userRoutineList);
         userRoutineListView.setAdapter(userRoutineAdapter);
+
         //Set up the OnItemClickListener for the ListView of all exercises
         allExercises.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -94,7 +105,8 @@ public class CreateRoutine extends AppCompatActivity {
                 userRoutineAdapter.notifyDataSetChanged();
             }
         });
-        //save all changes
+
+        // save all changes
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +118,7 @@ public class CreateRoutine extends AppCompatActivity {
                 for (Exercise exercise : userRoutineList) {
                     userRoutineString += exercise.getName() + ",";
                 }
+
                 // erase last coma and any space
                 if (!userRoutineList.isEmpty()) {
                     userRoutineString = userRoutineString.substring(0, userRoutineString.length() - 2);
@@ -114,7 +127,8 @@ public class CreateRoutine extends AppCompatActivity {
 
                 if (routineTitle.isEmpty() || routineDuration.isEmpty()) {
                     Toast.makeText(CreateRoutine.this, "Please insert a title and duration", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                else {
                     UserRoutine routine = new UserRoutine( routineTitle, routineDuration,userRoutineString,userEmail);
                     mDatabase.child("user-routine").push().setValue(routine)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -131,6 +145,7 @@ public class CreateRoutine extends AppCompatActivity {
             }
         });
     }
+
     public class Exercise {
         private String name;
 

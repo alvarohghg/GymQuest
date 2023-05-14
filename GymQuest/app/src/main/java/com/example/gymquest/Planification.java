@@ -45,14 +45,13 @@ public class Planification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planification);
 
-
+        // Bottom main menu
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
         BottomNavigationListener navigationListener = new BottomNavigationListener(this, bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(navigationListener);
 
         // Call customizeMenuColors initially to set the default colors
-        navigationListener.customizeMenuColors(R.id.menu_schedule);
-
+        navigationListener.customizeMenuColors(R.id.menu1_exercise_schedule);
 
         Monday=(Button) findViewById(R.id.planificationMonday);
         Tuesday=(Button)findViewById(R.id.planificationTuesday);
@@ -73,7 +72,7 @@ public class Planification extends AppCompatActivity {
         planificationEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Planification.this, editRoutine.class));
+                startActivity(new Intent(Planification.this, EditRoutine.class));
             }
         });
 
@@ -147,9 +146,11 @@ public class Planification extends AppCompatActivity {
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                     String currentRoutine = (String) userSnapshot.child(day.toLowerCase()).getValue();
                     planificationRoutine.setText(currentRoutine);
+
                     if (currentRoutine != null) {
                         // Find the routine in the "routines" collection
                         DatabaseReference routinesRef = FirebaseDatabase.getInstance().getReference().child("routines");
@@ -159,6 +160,7 @@ public class Planification extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 boolean found = false;
+
                                 for (DataSnapshot routineSnapshot : dataSnapshot.getChildren()) {
                                     found = true;
                                     String duration = routineSnapshot.child("duration").getValue(String.class);
@@ -173,11 +175,13 @@ public class Planification extends AppCompatActivity {
                                     // The routine was not found in the "routines" collection, try to find it in "user-routine"
                                     DatabaseReference userRoutinesRef = FirebaseDatabase.getInstance().getReference().child("user-routine");
                                     Query userRoutineQuery = userRoutinesRef.orderByChild("email").equalTo(currentUserEmail);
+
                                     userRoutineQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                             for (DataSnapshot userRoutineSnapshot : dataSnapshot.getChildren()) {
                                                 String routineName = userRoutineSnapshot.child("title").getValue(String.class);
+
                                                 if (routineName.equals(currentRoutine)) {
                                                     String duration = userRoutineSnapshot.child("duration").getValue(String.class);
                                                     String exercisesString = userRoutineSnapshot.child("exercises").getValue(String.class);
