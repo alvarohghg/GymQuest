@@ -33,6 +33,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,7 +69,7 @@ public class CreateRoutine extends AppCompatActivity {
                     String exerciseName = exerciseSnapshot.child("name").getValue(String.class);
                     exerciseNames.add(exerciseName);
                 }
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(CreateRoutine.this, android.R.layout.simple_list_item_1, exerciseNames);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(CreateRoutine.this, R.layout.list_item_exercise, exerciseNames);
                 allExercises.setAdapter(adapter);
             }
 
@@ -81,7 +82,7 @@ public class CreateRoutine extends AppCompatActivity {
 
         // Adapter for the ListView of the routine's user
         userRoutineList = new ArrayList<>();
-        userRoutineAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, userRoutineList);
+        userRoutineAdapter = new ArrayAdapter<>(this, R.layout.list_item_exercise, userRoutineList);
         userRoutineListView.setAdapter(userRoutineAdapter);
         //Set up the OnItemClickListener for the ListView of all exercises
         allExercises.setOnItemClickListener(new AdapterView.OnItemClickListener() {
