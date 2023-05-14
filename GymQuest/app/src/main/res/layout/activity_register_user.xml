@@ -78,7 +78,7 @@
             <LinearLayout
                 android:layout_width="267dp"
                 android:layout_height="53dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -92,19 +92,16 @@
                     android:layout_width="267dp"
                     android:layout_height="53dp"
                     android:layout_marginLeft="-40dp"
-                    android:backgroundTint="#322f19"
-                    android:ems="10"
+                    android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
                     android:hint="username..."
                     android:inputType="textPersonName"
                     android:paddingStart="42dp"
                     android:paddingTop="10dp"
-                    android:textColor="#545e4a"
-                    android:textColorHighlight="#FFFFFF"
-                    android:textColorHint="#545e4a"
-                    android:textColorLink="#FFFFFF"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:textColor="@color/text_p_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -124,19 +121,16 @@
                     android:layout_width="267dp"
                     android:layout_height="53dp"
                     android:layout_marginLeft="-40dp"
-                    android:backgroundTint="#322f19"
-                    android:ems="10"
+                    android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
                     android:hint="email..."
                     android:inputType="textEmailAddress"
                     android:paddingStart="42dp"
                     android:paddingTop="10dp"
-                    android:textColor="#545e4a"
-                    android:textColorHighlight="#FFFFFF"
-                    android:textColorHint="#545e4a"
-                    android:textColorLink="#FFFFFF"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:textColor="@color/text_p_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -155,19 +149,16 @@
                     android:layout_width="267dp"
                     android:layout_height="53dp"
                     android:layout_marginLeft="-40dp"
-                    android:backgroundTint="#322f19"
-                    android:ems="10"
+                    android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
                     android:hint="password..."
                     android:inputType="textPassword"
                     android:paddingStart="42dp"
                     android:paddingTop="10dp"
-                    android:textColor="#545e4a"
-                    android:textColorHighlight="#FFFFFF"
-                    android:textColorHint="#545e4a"
-                    android:textColorLink="#FFFFFF"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:textColor="@color/text_p_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -186,19 +177,16 @@
                     android:layout_width="267dp"
                     android:layout_height="53dp"
                     android:layout_marginLeft="-40dp"
-                    android:backgroundTint="#322f19"
-                    android:ems="10"
+                    android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
                     android:hint="password again..."
                     android:inputType="textPassword"
                     android:paddingStart="42dp"
                     android:paddingTop="10dp"
-                    android:textColor="#545e4a"
-                    android:textColorHighlight="#FFFFFF"
-                    android:textColorHint="#545e4a"
-                    android:textColorLink="#FFFFFF"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:textColor="@color/text_p_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -210,19 +198,16 @@
                     android:id="@+id/registerHeight"
                     android:layout_width="267dp"
                     android:layout_height="53dp"
-                    android:backgroundTint="#322f19"
-                    android:ems="10"
+                    android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
                     android:hint="height (cm)"
                     android:inputType="number"
                     android:paddingStart="42dp"
                     android:paddingTop="10dp"
-                    android:textColor="#545e4a"
-                    android:textColorHighlight="#FFFFFF"
-                    android:textColorHint="#545e4a"
-                    android:textColorLink="#FFFFFF"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:textColor="@color/text_p_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -235,19 +220,16 @@
                     android:layout_width="267dp"
                     android:layout_height="53dp"
                     android:layout_marginTop="0dp"
-                    android:backgroundTint="#322f19"
-                    android:ems="10"
+                    android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
                     android:hint="weight (kg)"
                     android:inputType="number"
                     android:paddingStart="42dp"
                     android:paddingTop="10dp"
-                    android:textColor="#545e4a"
-                    android:textColorHighlight="#FFFFFF"
-                    android:textColorHint="#545e4a"
-                    android:textColorLink="#FFFFFF"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:textColor="@color/text_p_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -259,19 +241,16 @@
                     android:id="@+id/registerKcal"
                     android:layout_width="267dp"
                     android:layout_height="53dp"
-                    android:backgroundTint="#322f19"
-                    android:ems="10"
+                    android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
-                    android:hint="target cal"
+                    android:hint="daily calories (kcal)"
                     android:inputType="number"
                     android:paddingStart="42dp"
                     android:paddingTop="10dp"
-                    android:textColor="#545e4a"
-                    android:textColorHighlight="#FFFFFF"
-                    android:textColorHint="#545e4a"
-                    android:textColorLink="#FFFFFF"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:textColor="@color/text_p_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <Button
@@ -279,11 +258,11 @@
                 android:layout_width="267dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="24dp"
-                android:backgroundTint="#46804b"
+                android:backgroundTint="@color/btn_success"
                 android:text="Sign Up"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
         </LinearLayout>

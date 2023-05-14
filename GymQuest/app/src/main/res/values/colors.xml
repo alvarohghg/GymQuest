@@ -19,6 +19,14 @@
 
     <color name="text_h1_main_color">#fdbc6b</color>
     <color name="text_p_color">#fecea4</color>
+    <color name="text_hint_color">#545e4a</color>
+
+    <color name="field_bg_overlay">#2A000000</color>
+
+    <color name="input_border_bot">#322f19</color>
+
+    <color name="btn_success">#4f9555</color>
+    <color name="btn_action">#b66036</color>
 
     <color name="bottom_navigation_item_background">#192112</color>
     <color name="bottom_navigation_item_background_selected">#1e2615</color>

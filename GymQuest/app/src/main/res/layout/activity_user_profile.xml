@@ -9,10 +9,22 @@
     tools:context=".UserProfile">
 
     <ImageView
+        android:id="@+id/editButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/edit" />
+
+    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,11 +32,13 @@
 
     <TextView
         android:id="@+id/settingsName"
-        android:layout_width="267dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Your Username"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-black"
+        android:text="Your Username"
         android:textAlignment="center"
         android:textColor="@color/text_p_color"
         android:textSize="20sp"
@@ -34,11 +48,13 @@
 
     <TextView
         android:id="@+id/settingsEmail"
-        android:layout_width="267dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Your Email"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-black"
+        android:text="Your Email"
         android:textAlignment="center"
         android:textColor="@color/text_p_color"
         android:textSize="20sp"
@@ -48,9 +64,11 @@
 
     <LinearLayout
         android:id="@+id/heightContainer"
-        android:layout_width="267dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,8 +78,8 @@
             android:id="@+id/settingsHeightBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Height:"
             android:fontFamily="sans-serif-black"
+            android:text="Height:"
             android:textAlignment="center"
             android:textColor="@color/text_p_color"
             android:textSize="20sp"
@@ -72,18 +90,20 @@
             android:id="@+id/settingsHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
             android:text="cm"
             android:textAlignment="center"
-            android:fontFamily="sans-serif-black"
             android:textColor="@color/text_p_color"
             android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/weightContainer"
-        android:layout_width="267dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,8 +113,8 @@
             android:id="@+id/settingsWeightBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Weight:"
             android:fontFamily="sans-serif-black"
+            android:text="Weight:"
             android:textAlignment="center"
             android:textColor="@color/text_p_color"
             android:textSize="20sp"
@@ -105,8 +125,8 @@
             android:id="@+id/settingsWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="kg"
             android:fontFamily="sans-serif-black"
+            android:text="kg"
             android:textAlignment="center"
             android:textColor="@color/text_p_color"
             android:textSize="20sp" />
@@ -115,9 +135,11 @@
 
     <LinearLayout
         android:id="@+id/targetCaloriesContainer"
-        android:layout_width="267dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,8 +149,8 @@
             android:id="@+id/settingsTargetBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Daily Calories Target:"
             android:fontFamily="sans-serif-black"
+            android:text="Daily Calories:"
             android:textAlignment="center"
             android:textColor="@color/text_p_color"
             android:textSize="20sp"
@@ -139,27 +161,12 @@
             android:id="@+id/settingsKcal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="kcal"
             android:fontFamily="sans-serif-black"
+            android:text="kcal"
             android:textAlignment="center"
             android:textColor="@color/text_p_color"
             android:textSize="20sp" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/editButton"
-        android:layout_width="267dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/col_pallet_orange"
-        android:text="Edit Profile"
-        android:textAlignment="center"
-        android:textColor="@color/col_pallet_white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <View
         android:id="@+id/border"

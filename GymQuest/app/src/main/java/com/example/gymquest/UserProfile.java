@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +29,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
-    private Button editButton;
+    private ImageView editButton;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -53,7 +54,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         final TextView settingsKg=(TextView) findViewById(R.id.settingsWeight);
         final TextView settingsKcal=(TextView) findViewById(R.id.settingsKcal);
 
-        editButton=(Button) findViewById(R.id.editButton);
+        editButton=(ImageView) findViewById(R.id.editButton);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
