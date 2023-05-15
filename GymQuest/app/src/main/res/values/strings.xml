@@ -1,4 +1,4 @@
-<resources>
+ <resources>
     <string name="app_name">GymQuest</string>
     <string name="app_title">GymQuest</string>
     <string name="powered_by">Developed by \n Alejandro, Alvaro and Igor </string>
@@ -9,7 +9,47 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="edit_back_content_description">Return</string>
+    <string name="first_name">First Name</string>
+    <string name="surname">Surname</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="submit_changes">Submit changes</string>
+    <string name="edit_profile">Edit profile</string>
+
+
+
+
+    <!-- Strings used to reset the user's password -->
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="reset_password">RESET PASSWORD</string>
+    <string name="information_menu_image_description">The i letter inside a circle, signifies an information</string>
+    <string name="remember_check_spam_folder">Remember to check your Spam Folder</string>
+
+    <!-- Strings used to register new user -->
+    <string name="register_new_user">Register a new user</string>
+    <string name="name">Name</string>
+    <string name="email">Email address</string>
+    <string name="password">Password</string>string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="height">Height (cm)</string>
+    <string name="kg">Kg</string>
+    <string name="kcal">Kcal target</string>
+    <string name="register">REGISTER</string>
+
+    <!-- Strings used for the login page -->
+    <string name="login_email">email…</string>
+    <string name="login_password">password…</string>
+    <string name="login_page_image_description">GymQuest\'s logo</string>
+    <string name="login_email_icon_description">Email address field\'s icon</string>
+    <string name="login_password_icon_description">Password field\'s icon</string>
+    <string name="login_need_help_description">Assistance button\'s icon</string>
+    <string name="login_forgot_password">Forgot Password?</string>
+    <string name="login_sign_in_btn">Sign In</string>
+    <string name="login_sign_up_btn">Sign Up</string>
+    <string name="login_need_help">Need help?</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
 </resources>
