@@ -13,7 +13,7 @@
         android:layout_width="197dp"
         android:layout_height="145dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,9 +31,9 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/input_border_bot"
         android:fontFamily="monospace"
-        android:hint="email..."
+        android:hint="email"
         android:inputType="textEmailAddress"
-        android:paddingStart="42dp"
+        android:paddingStart="47dp"
         android:paddingTop="10dp"
         android:textColor="@color/text_p_color"
         android:textColorHint="@color/text_hint_color"
@@ -45,11 +45,13 @@
 
     <ImageView
         android:id="@+id/iconEmail"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/email"
         app:layout_constraintTop_toTopOf="@+id/email"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/black_back_closed_envelope_shape" />
 
     <EditText
         android:id="@+id/password"
@@ -59,9 +61,9 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/input_border_bot"
         android:fontFamily="monospace"
-        android:hint="password..."
+        android:hint="password"
         android:inputType="textPassword"
-        android:paddingStart="42dp"
+        android:paddingStart="47dp"
         android:paddingTop="10dp"
         android:textColor="@color/text_p_color"
         android:textColorHint="@color/text_hint_color"
@@ -74,8 +76,10 @@
 
     <ImageView
         android:id="@+id/iconPassword"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toTopOf="@+id/password"
         app:srcCompat="@drawable/lock" />
@@ -145,7 +149,7 @@
         android:layout_width="80dp"
         android:layout_height="22dp"
         android:layout_marginBottom="24dp"
-        android:text="Need help?"
+        android:text="Need Help?"
         android:textAlignment="center"
         android:textColor="@color/text_p_color"
         android:textStyle="normal"

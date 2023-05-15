@@ -42,7 +42,7 @@
                 android:id="@+id/avatar2"
                 android:layout_width="197dp"
                 android:layout_height="145dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:visibility="visible"
                 app:srcCompat="@drawable/logonotext"
                 tools:visibility="visible" />
@@ -51,12 +51,13 @@
                 android:layout_width="267dp"
                 android:layout_height="53dp"
                 android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/iconEmail2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/profile" />
 
                 <EditText
@@ -66,9 +67,9 @@
                     android:layout_marginLeft="-40dp"
                     android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
-                    android:hint="username..."
+                    android:hint="username"
                     android:inputType="textPersonName"
-                    android:paddingStart="42dp"
+                    android:paddingStart="47dp"
                     android:paddingTop="10dp"
                     android:textColor="@color/text_p_color"
                     android:textColorHint="@color/text_hint_color"
@@ -79,13 +80,13 @@
             <LinearLayout
                 android:layout_width="267dp"
                 android:layout_height="53dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/iconEmail4"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/black_back_closed_envelope_shape" />
 
                 <EditText
@@ -95,9 +96,9 @@
                     android:layout_marginLeft="-40dp"
                     android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
-                    android:hint="email..."
+                    android:hint="email"
                     android:inputType="textEmailAddress"
-                    android:paddingStart="42dp"
+                    android:paddingStart="47dp"
                     android:paddingTop="10dp"
                     android:textColor="@color/text_p_color"
                     android:textColorHint="@color/text_hint_color"
@@ -108,12 +109,13 @@
             <LinearLayout
                 android:layout_width="267dp"
                 android:layout_height="53dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/iconPassword3"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/lock" />
 
                 <EditText
@@ -123,9 +125,9 @@
                     android:layout_marginLeft="-40dp"
                     android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
-                    android:hint="password..."
+                    android:hint="password"
                     android:inputType="textPassword"
-                    android:paddingStart="42dp"
+                    android:paddingStart="47dp"
                     android:paddingTop="10dp"
                     android:textColor="@color/text_p_color"
                     android:textColorHint="@color/text_hint_color"
@@ -136,12 +138,13 @@
             <LinearLayout
                 android:layout_width="267dp"
                 android:layout_height="53dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/iconPassword4"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/lock" />
 
                 <EditText
@@ -151,9 +154,9 @@
                     android:layout_marginLeft="-40dp"
                     android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
-                    android:hint="password again..."
+                    android:hint="password again"
                     android:inputType="textPassword"
-                    android:paddingStart="42dp"
+                    android:paddingStart="47dp"
                     android:paddingTop="10dp"
                     android:textColor="@color/text_p_color"
                     android:textColorHint="@color/text_hint_color"
@@ -164,12 +167,13 @@
             <LinearLayout
                 android:layout_width="267dp"
                 android:layout_height="53dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/iconPassword2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/height" />
 
                 <EditText
@@ -181,7 +185,7 @@
                     android:fontFamily="monospace"
                     android:hint="height (cm)"
                     android:inputType="number"
-                    android:paddingStart="42dp"
+                    android:paddingStart="47dp"
                     android:paddingTop="10dp"
                     android:textColor="@color/text_p_color"
                     android:textColorHint="@color/text_hint_color"
@@ -192,12 +196,13 @@
             <LinearLayout
                 android:layout_width="267dp"
                 android:layout_height="53dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/iconPassword5"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/weight" />
 
                 <EditText
@@ -209,7 +214,7 @@
                     android:fontFamily="monospace"
                     android:hint="weight (kg)"
                     android:inputType="number"
-                    android:paddingStart="42dp"
+                    android:paddingStart="47dp"
                     android:paddingTop="10dp"
                     android:textColor="@color/text_p_color"
                     android:textColorHint="@color/text_hint_color"
@@ -220,12 +225,13 @@
             <LinearLayout
                 android:layout_width="267dp"
                 android:layout_height="53dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/iconPassword6"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/kcal" />
 
                 <EditText
@@ -237,7 +243,7 @@
                     android:fontFamily="monospace"
                     android:hint="daily calories (kcal)"
                     android:inputType="number"
-                    android:paddingStart="42dp"
+                    android:paddingStart="47dp"
                     android:paddingTop="10dp"
                     android:textColor="@color/text_p_color"
                     android:textColorHint="@color/text_hint_color"
