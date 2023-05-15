@@ -23,7 +23,6 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
     private EditText newName, newHeight, newWeight,newTarget;
     private static final String TAG = "MyActivity";
 
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +31,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
 
         backButton=(ImageView)findViewById(R.id.editBackButton);
         backButton.setOnClickListener(this);
+
         submit=(Button)findViewById(R.id.editSubmitChanges);
         submit.setOnClickListener(this);
 
@@ -39,7 +39,6 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         newHeight = (EditText) findViewById(R.id.editHeight);
         newWeight = (EditText) findViewById(R.id.editWeight);
         newTarget= (EditText) findViewById(R.id.editTarget);
-
     }
 
     @Override

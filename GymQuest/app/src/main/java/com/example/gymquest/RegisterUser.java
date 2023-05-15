@@ -29,17 +29,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
-    private FirebaseAuth mAuth;
 
+    private FirebaseAuth mAuth;
     private TextView registerUser;
     private EditText name, height,kg,kcal, email, password, confirmPassword;
     private ProgressBar progressBar;
+    private ImageView backButton;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
+
         mAuth = FirebaseAuth.getInstance();
 
         registerUser = (Button) findViewById(R.id.registerButton);
@@ -56,25 +58,26 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         progressBar = (ProgressBar) findViewById(R.id.registerProgressBar);
 
-
+        backButton=(ImageView)findViewById(R.id.btnBackRegisterUser);
+        backButton.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.mainBanner:
-                startActivity(new Intent(this, Login.class));
-                break;
             case R.id.registerButton:
                 registerUser();
+                break;
+
+            case R.id.btnBackRegisterUser:
+                startActivity(new Intent(RegisterUser.this, Login.class));
                 break;
         }
 
     }
 
     private void registerUser() {
-
 
         String Name = name.getText().toString().trim();
         String Height = height.getText().toString().trim();

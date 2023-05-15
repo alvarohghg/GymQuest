@@ -52,6 +52,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         final TextView settingsKcal=(TextView) findViewById(R.id.settingsKcal);
 
         editButton=(ImageView) findViewById(R.id.editButton);
+
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

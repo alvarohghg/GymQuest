@@ -26,7 +26,6 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
 
     FirebaseAuth auth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

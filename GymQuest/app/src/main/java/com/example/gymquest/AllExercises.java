@@ -59,7 +59,7 @@ public class AllExercises extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<String> exerciseNames = new ArrayList<>(); // Create a list outside of the loop
-                
+
                 for (DataSnapshot routineSnapshot : dataSnapshot.getChildren()) {
                     String exercise = routineSnapshot.child("name").getValue(String.class);
                     exerciseNames.add(exercise); // Add every name to the list

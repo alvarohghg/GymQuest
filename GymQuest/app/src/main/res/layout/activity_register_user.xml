@@ -9,42 +9,14 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-12dp">
 
-    <TextView
-        android:id="@+id/registerNewUserText"
-        android:layout_width="wrap_content"
-        android:layout_height="43dp"
-        android:fontFamily="sans-serif-black"
-        android:outlineProvider="none"
-        android:text="Register new user"
-        android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
-
-    <ProgressBar
-        android:id="@+id/registerProgressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="70dp"
-        android:layout_height="64dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/btnBackRegisterUser"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_weight="1"
+        android:clickable="true"
+        android:onClick="onClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/left_arrow" />
@@ -194,10 +166,17 @@
                 android:layout_height="53dp"
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/iconPassword2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/height" />
+
                 <EditText
                     android:id="@+id/registerHeight"
                     android:layout_width="267dp"
                     android:layout_height="53dp"
+                    android:layout_marginLeft="-40dp"
                     android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
                     android:hint="height (cm)"
@@ -215,11 +194,17 @@
                 android:layout_height="53dp"
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/iconPassword5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/weight" />
+
                 <EditText
                     android:id="@+id/registerKg"
                     android:layout_width="267dp"
                     android:layout_height="53dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="-40dp"
                     android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
                     android:hint="weight (kg)"
@@ -237,10 +222,17 @@
                 android:layout_height="53dp"
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/iconPassword6"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/kcal" />
+
                 <EditText
                     android:id="@+id/registerKcal"
                     android:layout_width="267dp"
                     android:layout_height="53dp"
+                    android:layout_marginLeft="-40dp"
                     android:backgroundTint="@color/input_border_bot"
                     android:fontFamily="monospace"
                     android:hint="daily calories (kcal)"
@@ -267,5 +259,17 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/registerProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

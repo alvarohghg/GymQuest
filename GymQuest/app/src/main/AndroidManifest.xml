@@ -14,6 +14,7 @@
         tools:targetApi="31">
         <activity
             android:name=".CreateRoutine"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -21,6 +22,7 @@
         </activity>
         <activity
             android:name=".AllExercises"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -28,6 +30,7 @@
         </activity>
         <activity
             android:name=".ExerciseDisplay"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -35,6 +38,7 @@
         </activity>
         <activity
             android:name=".EditRoutine"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -42,6 +46,7 @@
         </activity>
         <activity
             android:name=".Planification"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -49,6 +54,7 @@
         </activity>
         <activity
             android:name=".SplashScreen"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,6 +68,7 @@
         </activity>
         <activity
             android:name=".Login"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -69,6 +76,7 @@
         </activity>
         <activity
             android:name=".RegisterUser"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -76,6 +84,7 @@
         </activity>
         <activity
             android:name=".ForgotPassword"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -83,6 +92,7 @@
         </activity>
         <activity
             android:name=".UserProfile"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -90,6 +100,7 @@
         </activity>
         <activity
             android:name=".EditProfile"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -97,6 +108,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
