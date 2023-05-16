@@ -18,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class EditProfile extends AppCompatActivity implements View.OnClickListener{
 
-    private ImageView backButton;
     private Button submit;
     private EditText newName, newHeight, newWeight,newTarget;
     private static final String TAG = "MyActivity";
@@ -28,9 +27,6 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
-
-        backButton=(ImageView)findViewById(R.id.editBackButton);
-        backButton.setOnClickListener(this);
 
         submit=(Button)findViewById(R.id.editSubmitChanges);
         submit.setOnClickListener(this);
@@ -44,9 +40,6 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.editBackButton:
-                startActivity(new Intent(EditProfile.this, UserProfile.class));
-                break;
 
             case R.id.editSubmitChanges:
                 changeUser();

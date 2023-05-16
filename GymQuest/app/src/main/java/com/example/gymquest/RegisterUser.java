@@ -34,7 +34,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private TextView registerUser;
     private EditText name, height,kg,kcal, email, password, confirmPassword;
     private ProgressBar progressBar;
-    private ImageView backButton;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -58,8 +57,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         progressBar = (ProgressBar) findViewById(R.id.registerProgressBar);
 
-        backButton=(ImageView)findViewById(R.id.btnBackRegisterUser);
-        backButton.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -70,9 +67,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 registerUser();
                 break;
 
-            case R.id.btnBackRegisterUser:
-                startActivity(new Intent(RegisterUser.this, Login.class));
-                break;
         }
 
     }

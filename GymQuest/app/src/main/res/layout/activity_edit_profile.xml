@@ -7,18 +7,6 @@
     android:background="@drawable/bg_main_gradient"
     tools:context=".EditProfile">
 
-    <ImageView
-        android:id="@+id/editBackButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:onClick="onClick"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/left_arrow" />
-
     <TextView
         android:id="@+id/editBanner"
         android:layout_width="wrap_content"
